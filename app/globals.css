@@ -14,6 +14,17 @@
   --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
 }
 
+@theme {
+  --color-ink: #16181A;        /* Primary text, dark sections, footer */
+  --color-graphite: #2A2E32;   /* Dark surfaces, cards on dark */
+  --color-steel: #6B7178;      /* Secondary text (on light only) */
+  --color-alloy: #C9CDD1;      /* Hairlines, borders, slat motif */
+  --color-mist: #EEEDEA;       /* Alternate section background */
+  --color-paper: #F8F7F4;      /* Page background */
+  --color-ember: #B4562A;      /* Accent: CTAs, focus, active filters */
+  --color-ember-dark: #8F4220; /* CTA hover */
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
