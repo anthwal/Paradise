@@ -86,3 +86,25 @@ body {
 @theme {
   --container-site: 82.5rem; /* 1320px */
 }
+
+/* Hero slat reveal: horizontal slats open on load (docs/04 "The Slat", docs/07 Hero) */
+@property --slat-open {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@keyframes slat-reveal {
+  from {
+    --slat-open: 0;
+  }
+}
+
+@utility slat-reveal {
+  mask-image: repeating-linear-gradient(
+    to bottom,
+    #000 0 calc(var(--slat-open) * 4rem),
+    transparent 0 4rem
+  );
+  animation: slat-reveal 900ms ease-out;
+}

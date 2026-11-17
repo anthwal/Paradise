@@ -30,7 +30,7 @@ export default function Hero({
         fill
         preload
         sizes="100vw"
-        className="-z-10 object-cover"
+        className="-z-10 object-cover motion-safe:slat-reveal"
       />
       {/* The one gradient allowed: a dark scrim for text legibility */}
       <div
