@@ -80,6 +80,9 @@ body {
   }
 }
 
+/* Header over a page hero, before the page scrolls (docs/07-ui-ux-design-system.md) */
+@custom-variant over-hero (body:has([data-hero]) &:not([data-scrolled]));
+
 @theme {
   --container-site: 82.5rem; /* 1320px */
 }

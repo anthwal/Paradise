@@ -4,10 +4,11 @@ import Link from "next/link";
 import { mainNav } from "@/lib/site";
 import MobileMenu from "@/components/mobile-menu";
 import Wordmark from "@/components/wordmark";
+import StickyHeader from "@/components/sticky-header";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-alloy bg-paper text-ink">
+    <StickyHeader className="group/header sticky top-0 z-40 border-b border-alloy bg-paper text-ink transition-colors data-scrolled:shadow-sm motion-reduce:transition-none over-hero:border-transparent over-hero:bg-transparent over-hero:text-paper">
       <Container>
         <div className="flex h-18 items-center justify-between gap-6">
           <Wordmark />
@@ -35,6 +36,6 @@ export default function Header() {
           </div>
         </div>
       </Container>
-    </header>
+    </StickyHeader>
   );
 }

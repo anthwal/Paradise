@@ -20,7 +20,10 @@ export default function Hero({
   children,
 }: HeroProps) {
   return (
-    <section className="relative isolate flex min-h-[85svh] items-end bg-ink text-paper">
+    <section
+      data-hero
+      className="relative isolate -mt-[calc(--spacing(18)+1px)] flex min-h-[85svh] items-end bg-ink text-paper"
+    >
       <Image
         src={imageSrc}
         alt={imageAlt}
@@ -32,7 +35,7 @@ export default function Hero({
       {/* The one gradient allowed: a dark scrim for text legibility */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-linear-to-t from-ink/90 via-ink/50 to-ink/10"
+        className="absolute inset-0 -z-10 bg-linear-to-b from-ink/70 via-ink/30 to-ink/90"
       />
       <Container>
         <div className="max-w-4xl py-18 lg:py-32">

@@ -4,7 +4,7 @@ export default function Wordmark({ onDark = false }: { onDark?: boolean }) {
   return (
     <Link
       href="/"
-      className={`flex items-center gap-3 ${onDark ? "text-paper" : "text-ink"}`}
+      className={`flex items-center gap-3 ${onDark ? "text-paper" : ""}`}
     >
       <svg
         aria-hidden="true"
@@ -22,7 +22,7 @@ export default function Wordmark({ onDark = false }: { onDark?: boolean }) {
           Paradise
         </span>
         <span
-          className={`font-display text-eyebrow uppercase ${onDark ? "text-alloy" : "text-steel"}`}
+          className={`font-display text-eyebrow uppercase ${onDark ? "text-alloy" : "text-steel group-over-hero/header:text-alloy"}`}
         >
           Fabrication &amp; Fencing
         </span>
