@@ -3,28 +3,14 @@ import Container from "@/components/container";
 import Link from "next/link";
 import {mainNav} from "@/lib/site";
 import MobileMenu from "@/components/mobile-menu";
+import Wordmark from "@/components/wordmark";
 
 export default function Header() {
     return (
         <header className="sticky top-0 z-40 border-b border-alloy bg-paper text-ink">
             <Container>
                 <div className="flex h-18 items-center justify-between gap-6">
-                    {/* Interim wordmark with three-slat mark (docs/04-brand-guidelines.md) */}
-                    <Link href="/" className="flex items-center gap-3">
-                        <svg aria-hidden="true" width="22" height="18" viewBox="0 0 22 18" className="shrink-0">
-                            <rect y="0" width="22" height="4" fill="currentColor" />
-                            <rect y="7" width="22" height="4" fill="currentColor" />
-                            <rect y="14" width="22" height="4" fill="currentColor" />
-                        </svg>
-                        <span className="flex flex-col">
-              <span className="font-display text-lg leading-none font-bold tracking-widest uppercase">
-                Paradise
-              </span>
-              <span className="font-display text-eyebrow text-steel uppercase">
-                Fabrication &amp; Fencing
-              </span>
-            </span>
-                    </Link>
+                    <Wordmark />
 
                     <nav aria-label="Main" className="hidden xl:block">
                         <ul className="flex items-center gap-8">

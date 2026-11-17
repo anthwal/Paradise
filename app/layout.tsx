@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
+import {siteDescription} from "@/lib/site";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -32,8 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Paradise Fabrication & Fencing",
     default: "Paradise Fabrication & Fencing",
   },
-  description:
-      "Custom gates, slat fencing, privacy screens and awnings, pool fencing and balustrades on the Gold Coast, Queensland.",
+  description: siteDescription,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <main id="main-content" className="flex-1">
         {children}
       </main>
+      <Footer />
       </body>
     </html>
   );
