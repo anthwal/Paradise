@@ -1,0 +1,8 @@
+docs/
+prototype/
+Paradise-Website-Prototype.html
+.claude/
+
+# Written by tools
+AGENTS.md
+package-lock.json
