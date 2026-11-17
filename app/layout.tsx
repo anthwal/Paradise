@@ -42,7 +42,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       // className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         className={`${archivo.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-3 focus:text-paper">
+        Skip to content
+      </a>
+      <main id="main-content" className="flex-1">
+        {children}
+      </main>
+      </body>
     </html>
   );
 }
