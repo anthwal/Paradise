@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import {siteDescription} from "@/lib/site";
+import {siteDescription, siteName} from "@/lib/site";
 import StickyMobileCta from "@/components/sticky-mobile-cta";
 
 // const geistSans = Geist({
@@ -20,7 +20,7 @@ import StickyMobileCta from "@/components/sticky-mobile-cta";
 const archivo = localFont({
   src: "./fonts/archivo-variable.woff2",
   weight: "100 900",
-  declarations: [{prop: "font-streach", value: "62% 125%"}],
+  declarations: [{prop: "font-stretch", value: "62% 125%"}],
   variable: "--font-archivo",
 });
 
@@ -32,8 +32,8 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Paradise Fabrication & Fencing",
-    default: "Paradise Fabrication & Fencing",
+    template: `%s | ${siteName}`,
+    default: siteName,
   },
   description: siteDescription,
 };

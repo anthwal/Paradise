@@ -33,6 +33,8 @@ export const mainNav: NavItems = [
     { label: "Contact", href: "/contact" },
 ];
 
+export const siteName = "Paradise Fabrication & Fencing"
+
 export const siteDescription =
     "Custom gates, slat fencing, privacy screens and awnings, pool fencing and balustrades on the Gold Coast, Queensland.";
 
