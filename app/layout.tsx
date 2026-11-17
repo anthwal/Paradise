@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import {siteDescription} from "@/lib/site";
+import StickyMobileCta from "@/components/sticky-mobile-cta";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         {children}
       </main>
       <Footer />
+      <StickyMobileCta />
       </body>
     </html>
   );

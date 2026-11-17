@@ -1,7 +1,7 @@
 import {ComponentProps} from "react";
 import Link from "next/link";
 
-const base = "inline-flex min-h-12 items-center justify-center gap-2 rounded-xs border px-6 font-medium transition-colors motion-reduce:transition-none";
+const base = "inline-flex min-h-12 items-center justify-center gap-2 rounded-xs border px- font-medium whitespace-nowrap transition-colors motion-reduce:transition-none sm:px-6";
 
 const variants = {
     primary: "border-ember bg-ember text-white hover:border-ember-dark hover:bg-ember-dark",
