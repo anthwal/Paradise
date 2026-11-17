@@ -1,13 +1,20 @@
 import Container from "@/components/container";
 import {Button, ButtonLink} from "@/components/button";
+import Eyebrow from "@/components/eyebrow";
 
 export default function Home() {
   return (
       <section className="py-18 lg:py-32">
         <Container>
+            <div className="text-steel">
+                <Eyebrow>Paradise Fabrication</Eyebrow>
+            </div>
           <h1 className="font-display font-stretch-87% text-display">
             Paradise Fabrication &amp; Fencing
           </h1>
+            <div className="mt-8 bg-ink p-6 text-paper">
+                <Eyebrow>On dark</Eyebrow>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
                 <ButtonLink href="/contact">Request a quote</ButtonLink>
                 <Button variant="secondary">Secondary</Button>
