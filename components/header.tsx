@@ -2,10 +2,11 @@ import {ButtonLink} from "@/components/button";
 import Container from "@/components/container";
 import Link from "next/link";
 import {mainNav} from "@/lib/site";
+import MobileMenu from "@/components/mobile-menu";
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-40 border-b border-alloy bg-paper">
+        <header className="sticky top-0 z-40 border-b border-alloy bg-paper text-ink">
             <Container>
                 <div className="flex h-18 items-center justify-between gap-6">
                     {/* Interim wordmark with three-slat mark (docs/04-brand-guidelines.md) */}
@@ -37,8 +38,11 @@ export default function Header() {
                         </ul>
                     </nav>
 
-                    <div className="hidden md:block">
-                        <ButtonLink href="/contact">Request a Quote</ButtonLink>
+                    <div className="flex items-center gap-3">
+                        <div className="hidden md:block">
+                            <ButtonLink href="/contact">Request a Quote</ButtonLink>
+                        </div>
+                        <MobileMenu />
                     </div>
                 </div>
             </Container>

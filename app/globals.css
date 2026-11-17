@@ -64,6 +64,10 @@ body {
 }
 
 @layer base {
+  html:has(dialog:modal) {
+    overflow: hidden;
+  }
+
   body {
     line-height: var(--text-body--line-height);
   }
