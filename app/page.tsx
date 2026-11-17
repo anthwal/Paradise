@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import {Button, ButtonLink} from "@/components/button";
 
 export default function Home() {
   return (
@@ -7,6 +8,13 @@ export default function Home() {
           <h1 className="font-display font-stretch-87% text-display">
             Paradise Fabrication &amp; Fencing
           </h1>
+            <div className="mt-8 flex flex-wrap gap-3">
+                <ButtonLink href="/contact">Request a quote</ButtonLink>
+                <Button variant="secondary">Secondary</Button>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3 bg-ink p-6">
+                <ButtonLink href="tel:+610000000000" variant="ghost-light">Call (placeholder)</ButtonLink>
+            </div>
         </Container>
       </section>
     // <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
