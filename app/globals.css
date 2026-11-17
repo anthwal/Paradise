@@ -12,19 +12,21 @@
   --color-foreground: var(--foreground);
   /*--font-sans: var(--font-geist-sans);*/
   /*--font-mono: var(--font-geist-mono);*/
-  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-sans:
+    var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
   --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
 }
 
 @theme {
-  --color-ink: #16181A;        /* Primary text, dark sections, footer */
-  --color-graphite: #2A2E32;   /* Dark surfaces, cards on dark */
-  --color-steel: #6B7178;      /* Secondary text (on light only) */
-  --color-alloy: #C9CDD1;      /* Hairlines, borders, slat motif */
-  --color-mist: #EEEDEA;       /* Alternate section background */
-  --color-paper: #F8F7F4;      /* Page background */
-  --color-ember: #B4562A;      /* Accent: CTAs, focus, active filters */
-  --color-ember-dark: #8F4220; /* CTA hover */
+  --color-ink: #16181a; /* Primary text, dark sections, footer */
+  --color-graphite: #2a2e32; /* Dark surfaces, cards on dark */
+  --color-steel: #6b7178; /* Secondary text (on light only) */
+  --color-alloy: #c9cdd1; /* Hairlines, borders, slat motif */
+  --color-mist: #eeedea; /* Alternate section background */
+  --color-paper: #f8f7f4; /* Page background */
+  --color-ember: #b4562a; /* Accent: CTAs, focus, active filters */
+  --color-ember-dark: #8f4220; /* CTA hover */
 }
 
 @theme {

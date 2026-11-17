@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import {siteDescription, siteName} from "@/lib/site";
+import { siteDescription, siteName } from "@/lib/site";
 import StickyMobileCta from "@/components/sticky-mobile-cta";
 
 // const geistSans = Geist({
@@ -20,7 +20,7 @@ import StickyMobileCta from "@/components/sticky-mobile-cta";
 const archivo = localFont({
   src: "./fonts/archivo-variable.woff2",
   weight: "100 900",
-  declarations: [{prop: "font-stretch", value: "62% 125%"}],
+  declarations: [{ prop: "font-stretch", value: "62% 125%" }],
   variable: "--font-archivo",
 });
 
@@ -43,18 +43,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en-AU"
       // className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-        className={`${archivo.variable} ${inter.variable} h-full antialiased`}
+      className={`${archivo.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-3 focus:text-paper">
-        Skip to content
-      </a>
-      <Header />
-      <main id="main-content" className="flex-1">
-        {children}
-      </main>
-      <Footer />
-      <StickyMobileCta />
+      <body className="flex min-h-full flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:z-50 focus:bg-ink focus:px-4 focus:py-3 focus:text-paper"
+        >
+          Skip to content
+        </a>
+        <Header />
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
+        <Footer />
+        <StickyMobileCta />
       </body>
     </html>
   );
