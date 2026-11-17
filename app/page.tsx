@@ -1,32 +1,26 @@
-import Container from "@/components/container";
-import { Button, ButtonLink } from "@/components/button";
-import Eyebrow from "@/components/eyebrow";
+import { ButtonLink } from "@/components/button";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
-    <section className="py-18 lg:py-32">
-      <Container>
-        <div className="text-steel">
-          <Eyebrow>Paradise Fabrication</Eyebrow>
-        </div>
-        <h1 className="font-display text-display font-stretch-87%">
-          Paradise Fabrication &amp; Fencing
-        </h1>
-        <div className="mt-8 bg-ink p-6 text-paper">
-          <Eyebrow>On dark</Eyebrow>
-        </div>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href="/contact">Request a quote</ButtonLink>
-          <Button variant="secondary">Secondary</Button>
-        </div>
-        <div className="mt-8 flex flex-wrap gap-3 bg-ink p-6">
-          <ButtonLink href="tel:+610000000000" variant="ghost-light">
-            Call (placeholder)
-          </ButtonLink>
-        </div>
-      </Container>
-      <div className="h-[200vh]" />
-    </section>
+    <Hero
+      imageSrc="/images/gates/custom-05.jpg"
+      imageAlt="Black vertical blade sliding gate across a gravel driveway"
+      eyebrow="Gold Coast Fabrication & Fencing"
+      title="Gates, fencing & screens, made to measure."
+    >
+      <p className="mt-6 max-w-2xl text-body-l">
+        Custom gates, slat fencing, privacy screens, pool fencing and
+        balustrades, designed and made to suit the way your property looks and
+        lives.
+      </p>
+      <div className="mt-8 flex flex-wrap gap-3">
+        <ButtonLink href="/contact">Request a Quote</ButtonLink>
+        <ButtonLink href="/projects" variant="ghost-light">
+          View Our Projects
+        </ButtonLink>
+      </div>
+    </Hero>
     // <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     //   <div className="mx-auto w-full max-w-site px-4 md:px-8 xl:px-12 py-18 lg:py-32 bg-mist">Container</div>
     //   <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
