@@ -1,7 +1,6 @@
 import { ButtonLink } from "@/components/button";
 import Hero from "@/components/hero";
 import Container from "@/components/container";
-import Eyebrow from "@/components/eyebrow";
 import { services } from "@/lib/site";
 import ServiceTile from "@/components/service-tile";
 import {
@@ -14,10 +13,18 @@ import {
 import { projects } from "@/lib/projects/projects";
 import SectionHeading from "@/components/section-heading";
 import ProjectCard from "@/components/project-card";
+import Image from "next/image";
 
 export type Highlight = { label: string; Icon: LucideIcon };
 
 export type Highlights = Highlight[];
+
+export type Reason = {
+  title: string;
+  text: string;
+};
+
+export type Reasons = Reason[];
 
 const featuredProjects = projects.filter((project) => project.featured);
 
@@ -26,6 +33,26 @@ const highlights: Highlights = [
   { label: "Made to measure", Icon: Ruler },
   { label: "Glass & aluminium", Icon: Layers },
   { label: "Gold Coast", Icon: MapPin },
+];
+
+// Why Paradise: 4 pillars (docs/05-website-sitemap.md)
+const reasons = [
+  {
+    title: "Made to measure, not off the shelf",
+    text: "Openings, slopes and pier spacing are rarely standard. Each job is made to suit its site, so panels sit square and gaps stay even from end to end.",
+  },
+  {
+    title: "Gates, fences and entries that match",
+    text: "Slat direction, spacing and colour carried through the driveway gate, pedestrian gate and fence panels, so the whole frontage reads as one design.",
+  },
+  {
+    title: "Glass or aluminium, chosen for the setting",
+    text: "Frameless glass where the view matters. Slats, blades and pickets where you want privacy, shade or a crisp architectural line. We can talk through the options.",
+  },
+  {
+    title: "From family homes to multi-storey buildings",
+    text: "Our work includes residential frontages, decks and pools, as well as façade screens and balcony screens on commercial and apartment buildings.",
+  },
 ];
 
 export default function Home() {
@@ -134,6 +161,41 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </Container>
+      </section>
+      <section
+        aria-labelledby="why-heading"
+        className="border-t border-alloy py-18 lg:py-32"
+      >
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-6">
+            {/* Tall image: on desktop it stretches to the height of the text column */}
+            <div className="relative aspect-4/3 bg-mist lg:col-span-5 lg:aspect-auto">
+              <Image
+                src="/images/fencing/custom-07.jpg"
+                alt="Black vertical blade fence panels set between white rendered piers"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="lg:col-span-6 lg:col-start-7">
+              <SectionHeading
+                id="why-heading"
+                eyebrow="Why Paradise"
+                title="Built around your property."
+              />
+              <ul className="mt-12 divide-y divide-alloy border-y border-alloy">
+                {reasons.map((reason) => (
+                  <li key={reason.title} className="py-6">
+                    <h3 className="font-display text-h3">{reason.title}</h3>
+                    <p className="mt-2 text-steel">{reason.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </Container>
       </section>
     </>
