@@ -54,7 +54,11 @@ export async function generateMetadata({
     return {};
   }
 
-  return { title: service.label, description: service.summary };
+  return {
+    title: service.label,
+    description: service.summary,
+    alternates: { canonical: `/services/${service.slug}` },
+  };
 }
 
 // Titled items in two columns, used for options and considerations

@@ -20,6 +20,12 @@ import ProcessSteps from "@/components/process-steps";
 import CtaSection from "@/components/cta-section";
 import Reveal from "@/components/reveal";
 import { services } from "@/lib/services/services";
+import type { Metadata } from "next";
+
+// Title and description come from the root layout
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export type Highlight = { label: string; Icon: LucideIcon };
 

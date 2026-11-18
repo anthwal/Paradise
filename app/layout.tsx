@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { siteDescription, siteName } from "@/lib/site";
+import { siteDescription, siteName, siteUrl } from "@/lib/site";
 import StickyMobileCta from "@/components/sticky-mobile-cta";
 
 // const geistSans = Geist({
@@ -36,6 +36,14 @@ export const metadata: Metadata = {
     default: siteName,
   },
   description: siteDescription,
+  // Turns relative URLs (canonical links, share images) into absolute ones
+  metadataBase: new URL(siteUrl),
+  // Shared social sharing defaults; titles and descriptions fall back to each page's own
+  openGraph: {
+    siteName,
+    locale: "en_AU",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

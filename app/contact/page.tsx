@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Request a Quote",
   description:
     "Request a quote for custom gates, fencing, screens, pool fencing or balustrades on the Gold Coast. Tell us about your project.",
+  alternates: { canonical: "/contact" },
 };
 
 const cardClass = "border-t border-alloy pt-6";

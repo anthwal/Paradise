@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Custom gates, slat fencing, privacy screens and awnings, pool fencing, balustrades and custom fabrication on the Gold Coast.",
+  alternates: { canonical: "/services" },
 };
 
 // Services overview (docs/05-website-sitemap.md: /services)

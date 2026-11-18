@@ -28,6 +28,10 @@ export const siteName = "Paradise Fabrication & Fencing";
 export const siteDescription =
   "Custom gates, slat fencing, privacy screens and awnings, pool fencing and balustrades on the Gold Coast, Queensland.";
 
+// Production address for canonical links, the sitemap and social sharing.
+// The existing site's domain; keeping it is still to be confirmed (docs/01-business-discovery.md, question 12).
+export const siteUrl = "https://paradisefabricationfencing.com.au";
+
 export const business: BusinessDetails = {
   legalName: "Paradise Fabrication & Fencing Pty Ltd",
   region: "Gold Coast, QLD",

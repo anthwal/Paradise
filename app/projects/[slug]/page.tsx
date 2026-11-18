@@ -29,7 +29,11 @@ export async function generateMetadata({
     return {};
   }
 
-  return { title: project.title, description: project.story };
+  return {
+    title: project.title,
+    description: project.story,
+    alternates: { canonical: `/projects/${project.slug}` },
+  };
 }
 
 // Project detail: hero, story with facts, photos, CTA (docs/05-website-sitemap.md: /projects/[slug])

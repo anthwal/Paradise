@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Paradise Fabrication & Fencing makes custom gates, fencing, screens and balustrades on the Gold Coast, designed around each property.",
+  alternates: { canonical: "/about" },
 };
 
 // Content is still to be confirmed by the product owner.

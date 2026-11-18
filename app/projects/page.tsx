@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "Gates, fencing, screens, pool fencing and balustrades completed on the Gold Coast. Browse the gallery by type.",
+  alternates: { canonical: "/projects" },
 };
 
 // Reads ?category= inside the Suspense boundary, so the rest of the page stays prerendered

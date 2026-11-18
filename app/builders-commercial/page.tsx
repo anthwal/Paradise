@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Builders & Commercial",
   description:
     "Aluminium façade screens, balcony screens and balustrades for builders, developers and commercial buildings on the Gold Coast. Send your plans for a quote.",
+  alternates: { canonical: "/builders-commercial" },
 };
 
 // Builder and commercial audiences (docs/03-marketing-strategy.md)

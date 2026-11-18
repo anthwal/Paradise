@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "How Paradise Fabrication & Fencing collects, uses and protects the personal information you share with us.",
+  alternates: { canonical: "/privacy" },
 };
 
 const headingClass = "mt-12 font-display text-h3";
