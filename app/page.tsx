@@ -221,6 +221,42 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      <section
+        aria-labelledby="commercial-heading"
+        className="bg-ink py-18 text-paper lg:py-32"
+      >
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-6">
+            <div className="lg:col-span-5">
+              <SectionHeading
+                id="commercial-heading"
+                eyebrow="Builders & Commercial"
+                title="Screens and balustrades for multi-storey buildings."
+                onDark
+              >
+                Façade screens, balcony screens and balustrades for apartment
+                and commercial buildings. Tell us about the project and we can
+                talk through the scope.
+              </SectionHeading>
+              <div className="mt-8">
+                <ButtonLink href="/builders-commercial">
+                  Builders & commercial work
+                </ButtonLink>
+              </div>
+            </div>
+
+            <div className="relative aspect-4/3 lg:col-span-6 lg:col-start-7">
+              <Image
+                src="/images/awnings/screens-04.jpg"
+                alt="Horizontal aluminium louvre screen running up the façade of a multi-storey building"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
     </>
     // <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     //   <div className="mx-auto w-full max-w-site px-4 md:px-8 xl:px-12 py-18 lg:py-32 bg-mist">Container</div>
