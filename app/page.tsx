@@ -4,6 +4,24 @@ import Container from "@/components/container";
 import Eyebrow from "@/components/eyebrow";
 import { services } from "@/lib/site";
 import ServiceTile from "@/components/service-tile";
+import {
+  Building2,
+  Layers,
+  type LucideIcon,
+  MapPin,
+  Ruler,
+} from "lucide-react";
+
+export type Highlight = { label: string; Icon: LucideIcon };
+
+export type Highlights = Highlight[];
+
+const highlights: Highlights = [
+  { label: "Residential & commercial", Icon: Building2 },
+  { label: "Made to measure", Icon: Ruler },
+  { label: "Glass & aluminium", Icon: Layers },
+  { label: "Gold Coast", Icon: MapPin },
+];
 
 export default function Home() {
   return (
@@ -26,6 +44,21 @@ export default function Home() {
           </ButtonLink>
         </div>
       </Hero>
+      <section aria-label="Highlights" className="border-b border-alloy">
+        <Container>
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-4 py-6 lg:grid-cols-4">
+            {highlights.map(({ label, Icon }) => (
+              <li key={label} className="flex items-center gap-3 font-medium">
+                <Icon
+                  aria-hidden="true"
+                  className="size-5 shrink-0 text-steel"
+                />
+                {label}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
       <section aria-labelledby="services-heading" className="py-18 lg:py-32">
         <Container>
           <div className="text-steel">
