@@ -3,7 +3,7 @@
 import { ButtonLink } from "@/components/button";
 import ToConfirm from "@/components/to-confirm";
 import { Phone } from "lucide-react";
-import { business } from "@/lib/site";
+import { business, telHref } from "@/lib/site";
 import Container from "@/components/container";
 import { usePathname } from "next/navigation";
 
@@ -23,10 +23,7 @@ export default function StickyMobileCta() {
         <Container>
           <div className="grid grid-cols-2 gap-2 py-3">
             {business.phone ? (
-              <ButtonLink
-                href={`tel:${business.phone.replace(/\s/g, "")}`}
-                variant="secondary"
-              >
+              <ButtonLink href={telHref(business.phone)} variant="secondary">
                 <Phone aria-hidden="true" className="size-4" />
                 Call
               </ButtonLink>

@@ -17,6 +17,7 @@ import ProjectCard from "@/components/project-card";
 import Image from "next/image";
 import ToConfirm from "@/components/to-confirm";
 import ProcessSteps from "@/components/process-steps";
+import CtaSection from "@/components/cta-section";
 
 export type Highlight = { label: string; Icon: LucideIcon };
 
@@ -325,6 +326,10 @@ export default function Home() {
           </div>
         </Container>
       </section>
+      <CtaSection title="Let's talk about your property.">
+        Tell us what you have in mind. A few details about the job are all we
+        need to get started.
+      </CtaSection>
     </>
     // <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     //   <div className="mx-auto w-full max-w-site px-4 md:px-8 xl:px-12 py-18 lg:py-32 bg-mist">Container</div>

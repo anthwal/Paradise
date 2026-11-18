@@ -91,3 +91,8 @@ export const companyNav: NavItems = [
   { label: "Contact", href: "/contact" },
   { label: "Privacy", href: "/privacy" },
 ];
+
+// tel: links need the number without spaces
+export function telHref(phone: string) {
+  return `tel:${phone.replace(/\s/g, "")}`;
+}

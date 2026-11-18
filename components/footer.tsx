@@ -1,7 +1,13 @@
 import Container from "@/components/container";
 import Wordmark from "@/components/wordmark";
 import { ButtonLink } from "@/components/button";
-import { business, companyNav, services, siteDescription } from "@/lib/site";
+import {
+  business,
+  companyNav,
+  services,
+  siteDescription,
+  telHref,
+} from "@/lib/site";
 import Link from "next/link";
 import ToConfirm from "@/components/to-confirm";
 
@@ -16,7 +22,7 @@ const linkClass = "underline-offset-4 hover:text-paper hover:underline";
 // Site footer: brand, services, company, contact, licence line (docs/07-ui-ux-design-system.md)
 export default function Footer() {
   return (
-    <footer className="border-t border-paper/15 bg-ink text-alloy">
+    <footer className="border-t border-graphite bg-ink text-alloy">
       <Container>
         <div className="grid gap-12 py-18 md:grid-cols-2 lg:py-24 xl:grid-cols-5">
           <div className="xl:col-span-2">
@@ -59,10 +65,7 @@ export default function Footer() {
               <li>
                 Phone:{" "}
                 {business.phone ? (
-                  <a
-                    href={`tel:${business.phone.replace(/\s/g, "")}`}
-                    className={linkClass}
-                  >
+                  <a href={telHref(business.phone)} className={linkClass}>
                     {business.phone}
                   </a>
                 ) : (
