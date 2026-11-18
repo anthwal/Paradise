@@ -4,6 +4,8 @@ import Container from "@/components/container";
 import PageIntro from "@/components/page-intro";
 import ToConfirm from "@/components/to-confirm";
 import { business } from "@/lib/site";
+import JsonLd from "@/components/json-ld";
+import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -22,6 +24,9 @@ const linkClass = "underline underline-offset-4";
 export default function PrivacyPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([{ name: "Privacy Policy", path: "/privacy" }])}
+      />
       <PageIntro eyebrow="Legal" title="Privacy Policy">
         How we collect, use and protect the personal information you share with
         us.

@@ -6,6 +6,8 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { siteDescription, siteName, siteUrl } from "@/lib/site";
 import StickyMobileCta from "@/components/sticky-mobile-cta";
+import JsonLd from "@/components/json-ld";
+import { businessJsonLd } from "@/lib/structured-data/structured-data";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -66,6 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </main>
         <Footer />
         <StickyMobileCta />
+        <JsonLd data={businessJsonLd} />
       </body>
     </html>
   );

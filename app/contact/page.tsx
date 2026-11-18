@@ -6,6 +6,8 @@ import QuoteForm from "@/components/quote-form";
 import ToConfirm from "@/components/to-confirm";
 import { business, telHref } from "@/lib/site";
 import { enquirySteps } from "@/lib/enquiry/enquiry";
+import JsonLd from "@/components/json-ld";
+import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
 
 export const metadata: Metadata = {
   title: "Request a Quote",
@@ -38,6 +40,9 @@ async function PreselectedQuoteForm({
 export default function ContactPage({ searchParams }: PageProps<"/contact">) {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([{ name: "Contact", path: "/contact" }])}
+      />
       <PageIntro eyebrow="Request a quote" title="Tell us about your project.">
         A few details about the site help us understand the job and prepare an
         accurate quote.

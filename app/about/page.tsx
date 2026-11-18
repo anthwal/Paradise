@@ -11,6 +11,8 @@ import ToConfirm from "@/components/to-confirm";
 import { photos, Photos } from "@/lib/photos/photos";
 import { PhotoSources } from "@/lib/projects/projects";
 import { services } from "@/lib/services/services";
+import JsonLd from "@/components/json-ld";
+import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
 
 export const metadata: Metadata = {
   title: "About",
@@ -65,6 +67,7 @@ const principles: Principles = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "About", path: "/about" }])} />
       <PageIntro
         eyebrow="About Paradise"
         title="Fabricators with an eye for design."

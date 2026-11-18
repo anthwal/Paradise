@@ -12,6 +12,11 @@ import { faqs, Faqs } from "@/lib/faqs/faqs";
 import { photos, Photos } from "@/lib/photos/photos";
 import { PhotoSources } from "@/lib/projects/projects";
 import { services, Services } from "@/lib/services/services";
+import JsonLd from "@/components/json-ld";
+import {
+  breadcrumbJsonLd,
+  faqJsonLd,
+} from "@/lib/structured-data/structured-data";
 
 export const metadata: Metadata = {
   title: "Builders & Commercial",
@@ -90,6 +95,12 @@ const quoteHref = "/contact?service=builders-commercial";
 export default function BuildersCommercialPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Builders & Commercial", path: "/builders-commercial" },
+        ])}
+      />
+      <JsonLd data={faqJsonLd(questions)} />
       <Hero
         imageSrc="/images/awnings/screens-07.jpg"
         imageAlt="Vertical blade privacy screens on apartment balconies"

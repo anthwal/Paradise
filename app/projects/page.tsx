@@ -8,6 +8,8 @@ import ProjectGrid from "@/components/project-grid";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
 import { projects } from "@/lib/projects/projects";
+import JsonLd from "@/components/json-ld";
+import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -35,6 +37,9 @@ async function FilteredProjectGrid({
 export default function ProjectsPage({ searchParams }: PageProps<"/projects">) {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([{ name: "Projects", path: "/projects" }])}
+      />
       <PageIntro eyebrow="Our work" title="Projects">
         A selection of gates, fencing, screens, pool fencing and balustrades we
         have completed. Filter the gallery by type.

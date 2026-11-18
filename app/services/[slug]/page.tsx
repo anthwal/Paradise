@@ -16,11 +16,17 @@ import CtaSection from "@/components/cta-section";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Eyebrow from "@/components/eyebrow";
 import FaqList from "@/components/faq-list";
-import { faqs } from "@/lib/faqs/faqs";
+import { faqs, Faqs } from "@/lib/faqs/faqs";
 import PhotoGallery from "@/components/photo-gallery";
 import { photos, Photos } from "@/lib/photos/photos";
 import { categoryFilters } from "@/lib/projects/projects";
 import Link from "next/link";
+import JsonLd from "@/components/json-ld";
+import {
+  breadcrumbJsonLd,
+  faqJsonLd,
+  serviceJsonLd,
+} from "@/lib/structured-data/structured-data";
 
 export type PageSection = { id: string; label: string };
 
@@ -96,9 +102,18 @@ export default async function ServicePage({
   const examplesFilter = categoryFilters.find(
     (filter) => filter.category === service.category,
   );
+  const serviceFaqs: Faqs = service.faqs.map((id) => faqs[id]);
 
   return (
     <>
+      <JsonLd data={serviceJsonLd(service)} />
+      <JsonLd data={faqJsonLd(serviceFaqs)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Services", path: "/services" },
+          { name: service.label, path: `/services/${service.slug}` },
+        ])}
+      />
       <Hero
         imageSrc={service.image}
         imageAlt={service.imageAlt}
@@ -255,7 +270,7 @@ export default async function ServicePage({
                     title="Common questions"
                   />
                   <div className="mt-8">
-                    <FaqList items={service.faqs.map((id) => faqs[id])} />
+                    <FaqList items={serviceFaqs} />
                   </div>
                 </Reveal>
               </section>

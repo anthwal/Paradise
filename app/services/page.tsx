@@ -5,6 +5,8 @@ import PageIntro from "@/components/page-intro";
 import Reveal from "@/components/reveal";
 import ServiceTile from "@/components/service-tile";
 import { services } from "@/lib/services/services";
+import JsonLd from "@/components/json-ld";
+import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -17,6 +19,9 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([{ name: "Services", path: "/services" }])}
+      />
       <PageIntro eyebrow="Services" title="Made to measure, start to finish.">
         Gates, fencing, screens, pool fencing, balustrades and custom work,
         designed around your property and fabricated to suit.

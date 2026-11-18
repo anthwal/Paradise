@@ -13,6 +13,8 @@ import ToConfirm from "@/components/to-confirm";
 import { photos, Photos } from "@/lib/photos/photos";
 import { getProject, projects } from "@/lib/projects/projects";
 import { services } from "@/lib/services/services";
+import JsonLd from "@/components/json-ld";
+import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
 
 // All project pages are prerendered at build time
 export function generateStaticParams() {
@@ -56,6 +58,12 @@ export default async function ProjectPage({
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Projects", path: "/projects" },
+          { name: project.title, path: `/projects/${project.slug}` },
+        ])}
+      />
       <Hero
         imageSrc={project.image}
         imageAlt={project.imageAlt}
