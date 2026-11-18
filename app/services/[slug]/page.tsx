@@ -17,7 +17,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import Eyebrow from "@/components/eyebrow";
 import FaqList from "@/components/faq-list";
 import { faqs } from "@/lib/faqs/faqs";
-import Image from "next/image";
+import PhotoGallery from "@/components/photo-gallery";
 import { photos, Photos } from "@/lib/photos/photos";
 import { categoryFilters } from "@/lib/projects/projects";
 import Link from "next/link";
@@ -205,22 +205,11 @@ export default async function ServicePage({
                     eyebrow="Examples"
                     title="From our completed work"
                   />
-                  <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
-                    {examples.map((photo) => (
-                      <li
-                        key={photo.src}
-                        className="relative aspect-square overflow-hidden bg-mist"
-                      >
-                        <Image
-                          src={photo.src}
-                          alt={photo.alt}
-                          fill
-                          sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
-                          className="object-cover"
-                        />
-                      </li>
-                    ))}
-                  </ul>
+                  <PhotoGallery
+                    photos={examples}
+                    sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
+                    className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3"
+                  />
                   {examplesFilter && (
                     <Link
                       href={`/projects?category=${examplesFilter.slug}#gallery`}

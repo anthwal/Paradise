@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import PhotoGallery from "@/components/photo-gallery";
 import { photos, Photos } from "@/lib/photos/photos";
 import { categoryFilters } from "@/lib/projects/projects";
 
@@ -59,22 +59,11 @@ export default function ProjectGrid({ activeSlug }: ProjectGridProps) {
         Showing {shownPhotos.length} photos
       </p>
 
-      <ul className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-        {shownPhotos.map((photo) => (
-          <li
-            key={photo.src}
-            className="relative aspect-square overflow-hidden bg-mist"
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-              className="object-cover"
-            />
-          </li>
-        ))}
-      </ul>
+      <PhotoGallery
+        photos={shownPhotos}
+        sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+        className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4"
+      />
     </>
   );
 }
