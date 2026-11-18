@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sharedOpenGraph } from "@/lib/site";
 import { ButtonLink } from "@/components/button";
 import Container from "@/components/container";
 import CtaSection from "@/components/cta-section";
@@ -19,10 +20,19 @@ import {
 } from "@/lib/structured-data/structured-data";
 
 export const metadata: Metadata = {
-  title: "Builders & Commercial",
+  title: "Commercial Screens Gold Coast",
   description:
     "Aluminium façade screens, balcony screens and balustrades for builders, developers and commercial buildings on the Gold Coast. Send your plans for a quote.",
   alternates: { canonical: "/builders-commercial" },
+  openGraph: {
+    ...sharedOpenGraph,
+    images: [
+      {
+        url: "/images/awnings/screens-07.jpg",
+        alt: "Vertical blade privacy screens on apartment balconies",
+      },
+    ],
+  },
 };
 
 // Builder and commercial audiences (docs/03-marketing-strategy.md)

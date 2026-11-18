@@ -30,6 +30,7 @@ export type Project = {
   story: string;
   facts: ProjectFacts;
   photoSources: PhotoSources;
+  metaDescription: string; // Search result description, 155 characters or fewer
 };
 
 export type Projects = Project[];
@@ -63,6 +64,8 @@ export const projects: Projects = [
       "/images/gates/custom-03.jpg",
       "/images/gates/custom-04.jpg",
     ],
+    metaDescription:
+      "A complete street frontage in black vertical blades: sliding gate, entry gate and infill panels sharing one line. See the project photos.",
   },
   {
     slug: "slat-frontage",
@@ -84,6 +87,8 @@ export const projects: Projects = [
       "/images/fencing/custom-01.jpg",
       "/images/fencing/custom-02.jpg",
     ],
+    metaDescription:
+      "Wide-spaced black horizontal slat panels between white rendered piers, keeping the frontage light. See the project photos.",
   },
   {
     slug: "commercial-screen",
@@ -106,6 +111,8 @@ export const projects: Projects = [
       "/images/awnings/screens-02.jpg",
       "/images/awnings/screens-03.jpg",
     ],
+    metaDescription:
+      "A white horizontal slat screen wrapping the upper level of a commercial building, for shade and privacy. See the project photos.",
   },
   {
     slug: "waterfront-glass",
@@ -127,6 +134,8 @@ export const projects: Projects = [
       "/images/pool-fencing/pool-05.jpg",
       "/images/pool-fencing/pool-06.jpg",
     ],
+    metaDescription:
+      "Frameless glass pool fencing on spigots with a matching glass gate, keeping the water view open. See the project photos.",
   },
 ];
 

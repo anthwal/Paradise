@@ -31,6 +31,8 @@ export type Service = {
   faqs: FaqIds;
   category: ProjectCategory;
   related: ServiceSlugs; // "Often paired with" on the service page
+  metaTitle: string; // Search result title: primary keyword (docs/09-seo-strategy.md)
+  metaDescription: string; // Search result description, 155 characters or fewer
 };
 
 export type Services = Service[];
@@ -90,6 +92,9 @@ export const services: Services = [
     ],
     faqs: ["match", "orientation", "automation", "colours"],
     related: ["slat-fencing", "custom-fabrication", "privacy-screens-awnings"],
+    metaTitle: "Sliding Gates Gold Coast",
+    metaDescription:
+      "Sliding, swing and pedestrian gates in aluminium slat and blade designs, made to measure for Gold Coast homes. Request a quote today.",
   },
   {
     slug: "slat-fencing",
@@ -147,6 +152,9 @@ export const services: Services = [
     ],
     faqs: ["match", "orientation", "colours", "quote"],
     related: ["gates", "privacy-screens-awnings", "custom-fabrication"],
+    metaTitle: "Slat Fencing Gold Coast",
+    metaDescription:
+      "Horizontal slat and vertical blade fencing, plus infill panels between piers, made to measure on the Gold Coast. Request a quote today.",
   },
   {
     slug: "privacy-screens-awnings",
@@ -204,6 +212,9 @@ export const services: Services = [
     ],
     faqs: ["commercial", "screensUse", "colours", "quote"],
     related: ["balustrades", "slat-fencing", "custom-fabrication"],
+    metaTitle: "Privacy Screens Gold Coast",
+    metaDescription:
+      "Aluminium slat, blade and louvre privacy screens for homes, balconies and building façades on the Gold Coast. Request a quote today.",
   },
   {
     slug: "pool-fencing",
@@ -261,6 +272,9 @@ export const services: Services = [
     ],
     faqs: ["glassOrFramed", "poolSafety", "colours", "quote"],
     related: ["balustrades", "privacy-screens-awnings", "gates"],
+    metaTitle: "Pool Fencing Gold Coast",
+    metaDescription:
+      "Frameless glass and black framed pool fencing with matching gates for Gold Coast homes. Request a quote for your pool today.",
   },
   {
     slug: "balustrades",
@@ -312,6 +326,9 @@ export const services: Services = [
     ],
     faqs: ["glassBalustrade", "colours", "licence", "quote"],
     related: ["pool-fencing", "privacy-screens-awnings", "gates"],
+    metaTitle: "Balustrades Gold Coast",
+    metaDescription:
+      "Aluminium and glass balustrades for balconies, decks, verandahs and stairs on the Gold Coast. Request a quote today.",
   },
   {
     slug: "custom-fabrication",
@@ -367,6 +384,9 @@ export const services: Services = [
     ],
     faqs: ["match", "commercial", "drawings", "quote"],
     related: ["gates", "slat-fencing", "privacy-screens-awnings"],
+    metaTitle: "Custom Fabrication Gold Coast",
+    metaDescription:
+      "Custom metal fabrication on the Gold Coast: complete frontages, enclosures and one-off pieces made to suit. Describe your project for a quote.",
   },
 ];
 

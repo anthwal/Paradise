@@ -4,7 +4,13 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { siteDescription, siteName, siteUrl } from "@/lib/site";
+import {
+  defaultShareImages,
+  sharedOpenGraph,
+  siteDescription,
+  siteName,
+  siteUrl,
+} from "@/lib/site";
 import StickyMobileCta from "@/components/sticky-mobile-cta";
 import JsonLd from "@/components/json-ld";
 import { businessJsonLd } from "@/lib/structured-data/structured-data";
@@ -40,11 +46,10 @@ export const metadata: Metadata = {
   description: siteDescription,
   // Turns relative URLs (canonical links, share images) into absolute ones
   metadataBase: new URL(siteUrl),
-  // Shared social sharing defaults; titles and descriptions fall back to each page's own
+  // Social sharing defaults; titles and descriptions come from each page's own
   openGraph: {
-    siteName,
-    locale: "en_AU",
-    type: "website",
+    ...sharedOpenGraph,
+    images: defaultShareImages,
   },
 };
 

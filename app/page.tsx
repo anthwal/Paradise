@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/components/button";
 import Hero from "@/components/hero";
 import Container from "@/components/container";
-import { business } from "@/lib/site";
+import { business, siteName } from "@/lib/site";
 import ServiceTile from "@/components/service-tile";
 import {
   Building2,
@@ -22,8 +22,12 @@ import Reveal from "@/components/reveal";
 import { services } from "@/lib/services/services";
 import type { Metadata } from "next";
 
-// Title and description come from the root layout
+// Share image comes from the root layout
 export const metadata: Metadata = {
+  // title.template only applies to child segments, so the home page writes its title in full
+  title: { absolute: `Aluminium Fabrication Gold Coast | ${siteName}` },
+  description:
+    "Custom aluminium gates, slat fencing, privacy screens, pool fencing and balustrades, made to measure on the Gold Coast. Request a quote today.",
   alternates: { canonical: "/" },
 };
 

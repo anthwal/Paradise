@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { sharedOpenGraph } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
 import { ButtonLink } from "@/components/button";
 import Container from "@/components/container";
@@ -33,8 +34,12 @@ export async function generateMetadata({
 
   return {
     title: project.title,
-    description: project.story,
+    description: project.metaDescription,
     alternates: { canonical: `/projects/${project.slug}` },
+    openGraph: {
+      ...sharedOpenGraph,
+      images: [{ url: project.image, alt: project.imageAlt }],
+    },
   };
 }
 

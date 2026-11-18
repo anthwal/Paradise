@@ -54,3 +54,25 @@ export const companyNav: NavItems = [
 export function telHref(phone: string) {
   return `tel:${phone.replace(/\s/g, "")}`;
 }
+
+// Image shown when a page is shared on social media or in messaging apps
+export type ShareImage = { url: string; alt: string };
+
+export type ShareImages = ShareImage[];
+
+// Used by pages without a photo of their own (the home page hero)
+export const defaultShareImages: ShareImages = [
+  {
+    url: "/images/gates/custom-05.jpg",
+    alt: "Black vertical blade sliding gate across a gravel driveway",
+  },
+];
+
+// Social sharing fields every page keeps. A page that sets its own openGraph
+// replaces the layout's completely, so it spreads these in
+// (node_modules/next/dist/docs/01-app/03-api-reference/04-functions/generate-metadata.md "Merging").
+export const sharedOpenGraph = {
+  siteName,
+  locale: "en_AU",
+  type: "website",
+} as const;

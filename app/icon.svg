@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Placeholder icon: the wordmark's three-slat mark, until the logo is confirmed -->
+  <style>
+    rect { fill: #16181a; }
+    @media (prefers-color-scheme: dark) { rect { fill: #f8f7f4; } }
+  </style>
+  <rect x="1" y="3" width="22" height="4" />
+  <rect x="1" y="10" width="22" height="4" />
+  <rect x="1" y="17" width="22" height="4" />
+</svg>

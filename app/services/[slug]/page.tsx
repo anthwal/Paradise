@@ -7,6 +7,7 @@ import {
 import ServiceTile from "@/components/service-tile";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { sharedOpenGraph } from "@/lib/site";
 import Hero from "@/components/hero";
 import { ButtonLink } from "@/components/button";
 import Reveal from "@/components/reveal";
@@ -61,9 +62,13 @@ export async function generateMetadata({
   }
 
   return {
-    title: service.label,
-    description: service.summary,
+    title: service.metaTitle,
+    description: service.metaDescription,
     alternates: { canonical: `/services/${service.slug}` },
+    openGraph: {
+      ...sharedOpenGraph,
+      images: [{ url: service.image, alt: service.imageAlt }],
+    },
   };
 }
 
