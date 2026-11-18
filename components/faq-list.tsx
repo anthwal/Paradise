@@ -1,9 +1,9 @@
 // Native <details>, accessible without JavaScript (docs/07-ui-ux-design-system.md)
-import { Faq } from "@/lib/faqs/faqs";
+import { Faqs } from "@/lib/faqs/faqs";
 import { Plus } from "lucide-react";
 import ToConfirm from "@/components/to-confirm";
 
-export default function FaqList({ items }: { items: Faq[] }) {
+export default function FaqList({ items }: { items: Faqs }) {
   return (
     <div className="border-t border-alloy">
       {items.map((item) => (

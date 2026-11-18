@@ -5,7 +5,7 @@ export type Step = {
 
 export type Steps = Step[];
 
-const steps = [
+const steps: Steps = [
   {
     title: "Enquiry",
     text: "Send a few details and photos through the quote form, or give us a call.",

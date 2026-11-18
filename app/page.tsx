@@ -11,7 +11,7 @@ import {
   Quote,
   Ruler,
 } from "lucide-react";
-import { projects } from "@/lib/projects/projects";
+import { projects, Projects } from "@/lib/projects/projects";
 import SectionHeading from "@/components/section-heading";
 import ProjectCard from "@/components/project-card";
 import Image from "next/image";
@@ -32,7 +32,9 @@ export type Reason = {
 
 export type Reasons = Reason[];
 
-const featuredProjects = projects.filter((project) => project.featured);
+const featuredProjects: Projects = projects.filter(
+  (project) => project.featured,
+);
 
 const highlights: Highlights = [
   { label: "Residential & commercial", Icon: Building2 },

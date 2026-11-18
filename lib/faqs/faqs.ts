@@ -7,6 +7,8 @@ export type Faq = {
   toConfirm?: boolean; // Shows a "To confirm" tag with the answer
 };
 
+export type Faqs = Faq[];
+
 export const faqs = {
   match: {
     question: "Can my gate match my fence?",
@@ -69,3 +71,5 @@ export const faqs = {
 } satisfies Record<string, Faq>;
 
 export type FaqId = keyof typeof faqs;
+
+export type FaqIds = FaqId[];

@@ -1,4 +1,10 @@
-import { getService, ServiceItem, services } from "@/lib/services/services";
+import {
+  getService,
+  ServiceItems,
+  services,
+  Services,
+} from "@/lib/services/services";
+import ServiceTile from "@/components/service-tile";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "@/components/hero";
@@ -12,15 +18,19 @@ import Eyebrow from "@/components/eyebrow";
 import FaqList from "@/components/faq-list";
 import { faqs } from "@/lib/faqs/faqs";
 import Image from "next/image";
-import { photos } from "@/lib/photos/photos";
+import { photos, Photos } from "@/lib/photos/photos";
 
-// "On this page" links; each block below adds its entry as it is built
-const pageSections = [
+export type PageSection = { id: string; label: string };
+
+export type PageSections = PageSection[];
+
+// "On this page" links, in the same order as the content blocks below
+const pageSections: PageSections = [
   { id: "overview", label: "Overview" },
   { id: "options", label: "Options" },
-  { id: "considerations", label: "Design considerations" },
-  { id: "questions", label: "Questions" },
   { id: "examples", label: "Examples" },
+  { id: "considerations", label: "Before you start" },
+  { id: "questions", label: "Questions" },
 ];
 
 // Each content block: anchor target clear of the sticky header, hairline between blocks
@@ -46,7 +56,7 @@ export async function generateMetadata({
 }
 
 // Titled items in two columns, used for options and considerations
-function ItemGrid({ items }: { items: ServiceItem[] }) {
+function ItemGrid({ items }: { items: ServiceItems }) {
   return (
     <ul className="mt-8 grid gap-x-6 gap-y-8 md:grid-cols-2">
       {items.map((item) => (
@@ -71,8 +81,11 @@ export default async function ServicePage({
   }
 
   const quoteHref = `/contact?service=${service.slug}`;
-  const examples = photos.filter((photo) =>
+  const examples: Photos = photos.filter((photo) =>
     photo.categories.includes(service.category),
+  );
+  const relatedServices: Services = services.filter((item) =>
+    service.related.includes(item.slug),
   );
 
   return (
@@ -240,6 +253,34 @@ export default async function ServicePage({
           </div>
         </Container>
       </div>
+
+      <section
+        aria-labelledby="related-heading"
+        className="border-t border-alloy py-18 lg:py-32"
+      >
+        <Reveal>
+          <Container>
+            <SectionHeading
+              id="related-heading"
+              eyebrow="Related"
+              title="Often paired with"
+            />
+            <ul className="mt-12 grid gap-x-6 gap-y-10 md:grid-cols-3">
+              {relatedServices.map((related) => (
+                <li key={related.slug}>
+                  <ServiceTile
+                    href={`/services/${related.slug}`}
+                    title={related.label}
+                    image={related.image}
+                    imageAlt={related.imageAlt}
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                  />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </Reveal>
+      </section>
 
       <CtaSection
         eyebrow={service.label}

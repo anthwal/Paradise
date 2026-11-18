@@ -4,6 +4,8 @@
 export type ProjectCategory =
   "Gates" | "Slat Fencing" | "Screens" | "Pool" | "Balustrades" | "Custom";
 
+export type ProjectCategories = ProjectCategory[];
+
 export type Project = {
   slug: string;
   title: string;

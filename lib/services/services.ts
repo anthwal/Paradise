@@ -1,21 +1,36 @@
-import { FaqId } from "@/lib/faqs/faqs";
+import { FaqIds } from "@/lib/faqs/faqs";
 import { ProjectCategory } from "@/lib/projects/projects";
 
 export type ServiceItem = { title: string; text: string };
 
+export type ServiceItems = ServiceItem[];
+
+export type ServiceApplications = string[];
+
+export type ServiceSlug =
+  | "gates"
+  | "slat-fencing"
+  | "privacy-screens-awnings"
+  | "pool-fencing"
+  | "balustrades"
+  | "custom-fabrication";
+
+export type ServiceSlugs = ServiceSlug[];
+
 export type Service = {
-  slug: string;
+  slug: ServiceSlug;
   label: string;
   summary: string;
   headline: string;
   intro: string;
   image: string;
   imageAlt: string;
-  options: ServiceItem[];
-  applications: string[];
-  considerations: ServiceItem[];
-  faqs: FaqId[];
+  options: ServiceItems;
+  applications: ServiceApplications;
+  considerations: ServiceItems;
+  faqs: FaqIds;
   category: ProjectCategory;
+  related: ServiceSlugs; // "Often paired with" on the service page
 };
 
 export type Services = Service[];
@@ -74,6 +89,7 @@ export const services: Services = [
       },
     ],
     faqs: ["match", "orientation", "automation", "colours"],
+    related: ["slat-fencing", "custom-fabrication", "privacy-screens-awnings"],
   },
   {
     slug: "slat-fencing",
@@ -130,6 +146,7 @@ export const services: Services = [
       },
     ],
     faqs: ["match", "orientation", "colours", "quote"],
+    related: ["gates", "privacy-screens-awnings", "custom-fabrication"],
   },
   {
     slug: "privacy-screens-awnings",
@@ -186,6 +203,7 @@ export const services: Services = [
       },
     ],
     faqs: ["commercial", "screensUse", "colours", "quote"],
+    related: ["balustrades", "slat-fencing", "custom-fabrication"],
   },
   {
     slug: "pool-fencing",
@@ -242,6 +260,7 @@ export const services: Services = [
       },
     ],
     faqs: ["glassOrFramed", "poolSafety", "colours", "quote"],
+    related: ["balustrades", "privacy-screens-awnings", "gates"],
   },
   {
     slug: "balustrades",
@@ -292,6 +311,7 @@ export const services: Services = [
       },
     ],
     faqs: ["glassBalustrade", "colours", "licence", "quote"],
+    related: ["pool-fencing", "privacy-screens-awnings", "gates"],
   },
   {
     slug: "custom-fabrication",
@@ -346,6 +366,7 @@ export const services: Services = [
       },
     ],
     faqs: ["match", "commercial", "drawings", "quote"],
+    related: ["gates", "slat-fencing", "privacy-screens-awnings"],
   },
 ];
 

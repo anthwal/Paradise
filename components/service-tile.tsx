@@ -7,6 +7,7 @@ export type ServiceTileProps = {
   title: string;
   image: string;
   imageAlt: string;
+  sizes?: string; // Defaults to the home page's 7/5 grid
 };
 
 // Photo with a title bar; the whole tile is the link (docs/07-ui-ux-design-system.md)
@@ -15,6 +16,7 @@ export default function ServiceTile({
   title,
   image,
   imageAlt,
+  sizes = "(min-width: 1024px) 60vw, (min-width: 768px) 50vw, 100vw",
 }: ServiceTileProps) {
   return (
     <Link href={href} className="group block">
@@ -23,7 +25,7 @@ export default function ServiceTile({
           src={image}
           alt={imageAlt}
           fill
-          sizes="(min-width: 1024px) 60vw, (min-width: 768px) 50vw, 100vw"
+          sizes={sizes}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-103 group-focus-visible:scale-103 motion-reduce:transition-none"
         />
         <div
