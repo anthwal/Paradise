@@ -18,6 +18,7 @@ import Image from "next/image";
 import ToConfirm from "@/components/to-confirm";
 import ProcessSteps from "@/components/process-steps";
 import CtaSection from "@/components/cta-section";
+import Reveal from "@/components/reveal";
 
 export type Highlight = { label: string; Icon: LucideIcon };
 
@@ -96,235 +97,249 @@ export default function Home() {
         </Container>
       </section>
       <section aria-labelledby="services-heading" className="py-18 lg:py-32">
-        <Container>
-          <SectionHeading
-            id="services-heading"
-            eyebrow="Services"
-            title="What we make"
-          >
-            Six areas of work, all built to measure. Choose a service to see
-            examples, options and what to think about before you start.
-          </SectionHeading>
-          <ul className="mt-12 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-12">
-            {services.map((service, index) => (
-              <li
-                key={service.href}
-                // Editorial rhythm on desktop: 7/5, 5/7, 7/5
-                className={
-                  index % 4 === 0 || index % 4 === 3
-                    ? "lg:col-span-7"
-                    : "lg:col-span-5"
-                }
-              >
-                <ServiceTile
-                  href={service.href}
-                  title={service.label}
-                  image={service.image}
-                  imageAlt={service.imageAlt}
-                />
-              </li>
-            ))}
-          </ul>
-        </Container>
+        <Reveal>
+          <Container>
+            <SectionHeading
+              id="services-heading"
+              eyebrow="Services"
+              title="What we make"
+            >
+              Six areas of work, all built to measure. Choose a service to see
+              examples, options and what to think about before you start.
+            </SectionHeading>
+            <ul className="mt-12 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-12">
+              {services.map((service, index) => (
+                <li
+                  key={service.href}
+                  // Editorial rhythm on desktop: 7/5, 5/7, 7/5
+                  className={
+                    index % 4 === 0 || index % 4 === 3
+                      ? "lg:col-span-7"
+                      : "lg:col-span-5"
+                  }
+                >
+                  <ServiceTile
+                    href={service.href}
+                    title={service.label}
+                    image={service.image}
+                    imageAlt={service.imageAlt}
+                  />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </Reveal>
       </section>
       <section
         aria-labelledby="projects-heading"
         className="border-t border-alloy py-18 lg:py-32"
       >
-        <Container>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              id="projects-heading"
-              eyebrow="Projects"
-              title="Featured projects"
-            >
-              A few examples from our completed work, from street frontages to
-              waterfront pools.
-            </SectionHeading>
-            <div className="shrink-0">
-              <ButtonLink href="/projects" variant="secondary">
-                See all projects
-              </ButtonLink>
-            </div>
-          </div>
-
-          {/* Horizontal scroll on mobile, 3-up on desktop (docs/05-website-sitemap.md) */}
-          <ul className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-6 overflow-x-auto px-4 pt-1 pb-4 md:-mx-8 md:scroll-px-8 md:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:p-0">
-            {featuredProjects.map((project) => (
-              <li
-                key={project.slug}
-                className="w-4/5 shrink-0 snap-start md:w-2/5 lg:w-auto"
+        <Reveal>
+          <Container>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <SectionHeading
+                id="projects-heading"
+                eyebrow="Projects"
+                title="Featured projects"
               >
-                <ProjectCard
-                  href={`/projects/${project.slug}`}
-                  title={project.title}
-                  category={project.category}
-                  image={project.image}
-                  imageAlt={project.imageAlt}
-                />
-              </li>
-            ))}
-          </ul>
-        </Container>
+                A few examples from our completed work, from street frontages to
+                waterfront pools.
+              </SectionHeading>
+              <div className="shrink-0">
+                <ButtonLink href="/projects" variant="secondary">
+                  See all projects
+                </ButtonLink>
+              </div>
+            </div>
+
+            {/* Horizontal scroll on mobile, 3-up on desktop (docs/05-website-sitemap.md) */}
+            <ul className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-6 overflow-x-auto px-4 pt-1 pb-4 md:-mx-8 md:scroll-px-8 md:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:p-0">
+              {featuredProjects.map((project) => (
+                <li
+                  key={project.slug}
+                  className="w-4/5 shrink-0 snap-start md:w-2/5 lg:w-auto"
+                >
+                  <ProjectCard
+                    href={`/projects/${project.slug}`}
+                    title={project.title}
+                    category={project.category}
+                    image={project.image}
+                    imageAlt={project.imageAlt}
+                  />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </Reveal>
       </section>
       <section
         aria-labelledby="why-heading"
         className="border-t border-alloy py-18 lg:py-32"
       >
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-6">
-            {/* Tall image: on desktop it stretches to the height of the text column */}
-            <div className="relative aspect-4/3 bg-mist lg:col-span-5 lg:aspect-auto">
-              <Image
-                src="/images/fencing/custom-07.jpg"
-                alt="Black vertical blade fence panels set between white rendered piers"
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
-              />
-            </div>
+        <Reveal>
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-12 lg:gap-6">
+              {/* Tall image: on desktop it stretches to the height of the text column */}
+              <div className="relative aspect-4/3 bg-mist lg:col-span-5 lg:aspect-auto">
+                <Image
+                  src="/images/fencing/custom-07.jpg"
+                  alt="Black vertical blade fence panels set between white rendered piers"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
 
-            <div className="lg:col-span-6 lg:col-start-7">
-              <SectionHeading
-                id="why-heading"
-                eyebrow="Why Paradise"
-                title="Built around your property."
-              />
-              <ul className="mt-12 divide-y divide-alloy border-y border-alloy">
-                {reasons.map((reason) => (
-                  <li key={reason.title} className="py-6">
-                    <h3 className="font-display text-h3">{reason.title}</h3>
-                    <p className="mt-2 text-steel">{reason.text}</p>
-                  </li>
-                ))}
-              </ul>
+              <div className="lg:col-span-6 lg:col-start-7">
+                <SectionHeading
+                  id="why-heading"
+                  eyebrow="Why Paradise"
+                  title="Built around your property."
+                />
+                <ul className="mt-12 divide-y divide-alloy border-y border-alloy">
+                  {reasons.map((reason) => (
+                    <li key={reason.title} className="py-6">
+                      <h3 className="font-display text-h3">{reason.title}</h3>
+                      <p className="mt-2 text-steel">{reason.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        </Container>
+          </Container>
+        </Reveal>
       </section>
       <section
         aria-labelledby="process-heading"
         className="border-t border-alloy py-18 lg:py-32"
       >
-        <Container>
-          <SectionHeading
-            id="process-heading"
-            eyebrow="How it works"
-            title="From first call to final fit."
-          >
-            A straightforward process, so you know what happens next at every
-            stage.
-          </SectionHeading>
-          <div className="mt-6 text-steel">
-            <ToConfirm />
-          </div>
-          <div className="mt-12">
-            <ProcessSteps />
-          </div>
-        </Container>
+        <Reveal>
+          <Container>
+            <SectionHeading
+              id="process-heading"
+              eyebrow="How it works"
+              title="From first call to final fit."
+            >
+              A straightforward process, so you know what happens next at every
+              stage.
+            </SectionHeading>
+            <div className="mt-6 text-steel">
+              <ToConfirm />
+            </div>
+            <div className="mt-12">
+              <ProcessSteps />
+            </div>
+          </Container>
+        </Reveal>
       </section>
       <section
         aria-labelledby="commercial-heading"
         className="bg-ink py-18 text-paper lg:py-32"
       >
-        <Container>
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-6">
-            <div className="lg:col-span-5">
+        <Reveal>
+          <Container>
+            <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-6">
+              <div className="lg:col-span-5">
+                <SectionHeading
+                  id="commercial-heading"
+                  eyebrow="Builders & Commercial"
+                  title="Screens and balustrades for multi-storey buildings."
+                  onDark
+                >
+                  Façade screens, balcony screens and balustrades for apartment
+                  and commercial buildings. Tell us about the project and we can
+                  talk through the scope.
+                </SectionHeading>
+                <div className="mt-8">
+                  <ButtonLink href="/builders-commercial">
+                    Builders & commercial work
+                  </ButtonLink>
+                </div>
+              </div>
+
+              <div className="relative aspect-4/3 lg:col-span-6 lg:col-start-7">
+                <Image
+                  src="/images/awnings/screens-04.jpg"
+                  alt="Horizontal aluminium louvre screen running up the façade of a multi-storey building"
+                  fill
+                  sizes="(min-width: 1024px) 45vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </Container>
+        </Reveal>
+      </section>
+      <section aria-labelledby="reviews-heading" className="py-18 lg:py-32">
+        <Reveal>
+          <Container>
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeading
-                id="commercial-heading"
-                eyebrow="Builders & Commercial"
-                title="Screens and balustrades for multi-storey buildings."
-                onDark
+                id="reviews-heading"
+                eyebrow="Customer reviews"
+                title="What our customers say"
               >
-                Façade screens, balcony screens and balustrades for apartment
-                and commercial buildings. Tell us about the project and we can
-                talk through the scope.
+                Read reviews and see more of our work on our Facebook page.
               </SectionHeading>
-              <div className="mt-8">
-                <ButtonLink href="/builders-commercial">
-                  Builders & commercial work
+              <div className="shrink-0">
+                <ButtonLink href={business.facebook} variant="secondary">
+                  Reviews on Facebook
                 </ButtonLink>
               </div>
             </div>
 
-            <div className="relative aspect-4/3 lg:col-span-6 lg:col-start-7">
-              <Image
-                src="/images/awnings/screens-04.jpg"
-                alt="Horizontal aluminium louvre screen running up the façade of a multi-storey building"
-                fill
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </Container>
-      </section>
-      <section aria-labelledby="reviews-heading" className="py-18 lg:py-32">
-        <Container>
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              id="reviews-heading"
-              eyebrow="Customer reviews"
-              title="What our customers say"
-            >
-              Read reviews and see more of our work on our Facebook page.
-            </SectionHeading>
-            <div className="shrink-0">
-              <ButtonLink href={business.facebook} variant="secondary">
-                Reviews on Facebook
-              </ButtonLink>
-            </div>
-          </div>
-
-          {/* Placeholder slots: real reviews only, published with the customer's permission */}
-          <ul className="mt-12 grid gap-6 md:grid-cols-3">
-            {[1, 2, 3].map((slot) => (
-              <li
-                key={slot}
-                className="flex flex-col items-start gap-4 border border-dashed border-alloy p-6 text-steel"
-              >
-                <Quote aria-hidden="true" className="size-6 shrink-0" />
-                <p>
-                  A verified customer review will appear here, published with
-                  the customer&apos;s permission.
-                </p>
-                <ToConfirm />
-              </li>
-            ))}
-          </ul>
-        </Container>
+            {/* Placeholder slots: real reviews only, published with the customer's permission */}
+            <ul className="mt-12 grid gap-6 md:grid-cols-3">
+              {[1, 2, 3].map((slot) => (
+                <li
+                  key={slot}
+                  className="flex flex-col items-start gap-4 border border-dashed border-alloy p-6 text-steel"
+                >
+                  <Quote aria-hidden="true" className="size-6 shrink-0" />
+                  <p>
+                    A verified customer review will appear here, published with
+                    the customer&apos;s permission.
+                  </p>
+                  <ToConfirm />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </Reveal>
       </section>
       <section
         aria-labelledby="area-heading"
         className="border-t border-alloy py-18 lg:py-32"
       >
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-6">
-            <div className="lg:col-span-6">
-              <SectionHeading
-                id="area-heading"
-                eyebrow="Where we work"
-                title="Based on the Gold Coast."
-              >
-                We work with homeowners, builders and property owners on the
-                Gold Coast.
-              </SectionHeading>
-            </div>
+        <Reveal>
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-6">
+              <div className="lg:col-span-6">
+                <SectionHeading
+                  id="area-heading"
+                  eyebrow="Where we work"
+                  title="Based on the Gold Coast."
+                >
+                  We work with homeowners, builders and property owners on the
+                  Gold Coast.
+                </SectionHeading>
+              </div>
 
-            {/* Placeholder: service area not yet confirmed by the client */}
-            <div className="flex flex-col items-start gap-4 border border-dashed border-alloy p-6 text-steel lg:col-span-5 lg:col-start-8">
-              <ToConfirm />
-              <h3 className="font-display text-h3 text-ink">
-                Suburbs and regions serviced
-              </h3>
-              <p>
-                List the suburbs or regions covered (for example northern Gold
-                Coast, southern Gold Coast, hinterland, or nearby regions) and
-                any travel conditions.
-              </p>
+              {/* Placeholder: service area not yet confirmed by the client */}
+              <div className="flex flex-col items-start gap-4 border border-dashed border-alloy p-6 text-steel lg:col-span-5 lg:col-start-8">
+                <ToConfirm />
+                <h3 className="font-display text-h3 text-ink">
+                  Suburbs and regions serviced
+                </h3>
+                <p>
+                  List the suburbs or regions covered (for example northern Gold
+                  Coast, southern Gold Coast, hinterland, or nearby regions) and
+                  any travel conditions.
+                </p>
+              </div>
             </div>
-          </div>
-        </Container>
+          </Container>
+        </Reveal>
       </section>
       <CtaSection title="Let's talk about your property.">
         Tell us what you have in mind. A few details about the job are all we
