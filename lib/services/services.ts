@@ -93,7 +93,7 @@ export const services: Services = [
   },
   {
     slug: "slat-fencing",
-    category: "Pool",
+    category: "Slat Fencing",
     label: "Slat Fencing & Infill Panels",
     summary:
       "Horizontal slat and vertical blade fencing, plus infill panels between piers.",
