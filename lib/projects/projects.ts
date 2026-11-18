@@ -6,6 +6,11 @@ export type ProjectCategory =
 
 export type ProjectCategories = ProjectCategory[];
 
+// A gallery filter: the category and its value in the URL (?category=slug)
+export type CategoryFilter = { slug: string; category: ProjectCategory };
+
+export type CategoryFilters = CategoryFilter[];
+
 export type Project = {
   slug: string;
   title: string;
@@ -52,4 +57,14 @@ export const projects: Projects = [
     imageAlt: "Frameless glass pool fence on spigots, overlooking the water",
     featured: true,
   },
+];
+
+// Gallery filters on /projects, in the order of docs/07-ui-ux-design-system.md ("All" is no filter)
+export const categoryFilters: CategoryFilters = [
+  { slug: "gates", category: "Gates" },
+  { slug: "slat-fencing", category: "Slat Fencing" },
+  { slug: "screens", category: "Screens" },
+  { slug: "pool", category: "Pool" },
+  { slug: "balustrades", category: "Balustrades" },
+  { slug: "custom", category: "Custom" },
 ];

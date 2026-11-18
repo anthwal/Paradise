@@ -7,6 +7,7 @@ export type ProjectCardProps = {
   category: string;
   image: string;
   imageAlt: string;
+  sizes?: string; // Defaults to the home page's 3-up row
 };
 
 // 4:5 photo, category label and title; the whole card is the link (docs/07-ui-ux-design-system.md)
@@ -16,6 +17,7 @@ export default function ProjectCard({
   category,
   image,
   imageAlt,
+  sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 40vw, 80vw",
 }: ProjectCardProps) {
   return (
     <Link href={href} className="group block">
@@ -24,7 +26,7 @@ export default function ProjectCard({
           src={image}
           alt={imageAlt}
           fill
-          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 40vw, 80vw"
+          sizes={sizes}
           className="object-cover transition-transform duration-500 ease-out group-hover:scale-103 group-focus-visible:scale-103 motion-reduce:transition-none"
         />
         <div

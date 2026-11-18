@@ -13,12 +13,14 @@ import Reveal from "@/components/reveal";
 import Container from "@/components/container";
 import SectionHeading from "@/components/section-heading";
 import CtaSection from "@/components/cta-section";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import Eyebrow from "@/components/eyebrow";
 import FaqList from "@/components/faq-list";
 import { faqs } from "@/lib/faqs/faqs";
 import Image from "next/image";
 import { photos, Photos } from "@/lib/photos/photos";
+import { categoryFilters } from "@/lib/projects/projects";
+import Link from "next/link";
 
 export type PageSection = { id: string; label: string };
 
@@ -86,6 +88,9 @@ export default async function ServicePage({
   );
   const relatedServices: Services = services.filter((item) =>
     service.related.includes(item.slug),
+  );
+  const examplesFilter = categoryFilters.find(
+    (filter) => filter.category === service.category,
   );
 
   return (
@@ -216,6 +221,18 @@ export default async function ServicePage({
                       </li>
                     ))}
                   </ul>
+                  {examplesFilter && (
+                    <Link
+                      href={`/projects?category=${examplesFilter.slug}#gallery`}
+                      className="mt-6 inline-flex items-center gap-2 font-medium underline-offset-4 hover:underline"
+                    >
+                      See all {examplesFilter.category.toLowerCase()} projects
+                      <ArrowRight
+                        aria-hidden="true"
+                        className="size-4 text-ember"
+                      />
+                    </Link>
+                  )}
                 </Reveal>
               </section>
 
