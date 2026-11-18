@@ -3,15 +3,8 @@ import Hero from "@/components/hero";
 import Container from "@/components/container";
 import { business, siteName } from "@/lib/site";
 import ServiceTile from "@/components/service-tile";
-import {
-  Building2,
-  Layers,
-  type LucideIcon,
-  MapPin,
-  Quote,
-  Ruler,
-} from "lucide-react";
-import { projects, Projects } from "@/lib/projects/projects";
+import { Building2, Layers, MapPin, Quote, Ruler } from "lucide-react";
+import { projects } from "@/lib/projects/projects";
 import SectionHeading from "@/components/section-heading";
 import ProjectCard from "@/components/project-card";
 import Image from "next/image";
@@ -21,6 +14,8 @@ import CtaSection from "@/components/cta-section";
 import Reveal from "@/components/reveal";
 import { services } from "@/lib/services/services";
 import type { Metadata } from "next";
+import type { Projects } from "@/types/projects";
+import type { Highlights, Reasons } from "@/types/content";
 
 // Share image comes from the root layout
 export const metadata: Metadata = {
@@ -30,17 +25,6 @@ export const metadata: Metadata = {
     "Custom aluminium gates, slat fencing, privacy screens, pool fencing and balustrades, made to measure on the Gold Coast. Request a quote today.",
   alternates: { canonical: "/" },
 };
-
-export type Highlight = { label: string; Icon: LucideIcon };
-
-export type Highlights = Highlight[];
-
-export type Reason = {
-  title: string;
-  text: string;
-};
-
-export type Reasons = Reason[];
 
 const featuredProjects: Projects = projects.filter(
   (project) => project.featured,

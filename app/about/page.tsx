@@ -8,11 +8,13 @@ import PageIntro from "@/components/page-intro";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
 import ToConfirm from "@/components/to-confirm";
-import { photos, Photos } from "@/lib/photos/photos";
-import { PhotoSources } from "@/lib/projects/projects";
+import { photos } from "@/lib/photos/photos";
 import { services } from "@/lib/services/services";
 import JsonLd from "@/components/json-ld";
 import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
+import type { Photos } from "@/types/photos";
+import type { PhotoSources } from "@/types/projects";
+import type { BackgroundPrompts, Principles } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "About",
@@ -34,8 +36,6 @@ const collage: Photos = photos.filter((photo) =>
 );
 
 // Background details the client is asked to supply
-export type BackgroundPrompts = string[];
-
 const backgroundPrompts: BackgroundPrompts = [
   "When and how the business started",
   "Who runs it (for example family-owned, owner-operated)",
@@ -43,10 +43,6 @@ const backgroundPrompts: BackgroundPrompts = [
   "Years of experience and the team's trade background",
   "Licence and insurance details to display",
 ];
-
-export type Principle = { title: string; text: string };
-
-export type Principles = Principle[];
 
 const principles: Principles = [
   {

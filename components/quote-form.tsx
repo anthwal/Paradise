@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/button";
 import { services } from "@/lib/services/services";
+import type { PropertyTypes, ServiceOptions } from "@/types/enquiry";
 
 export type QuoteFormProps = {
   selectedService?: string; // ?service= value from a service, project or builders page
 };
-
-export type ServiceOption = { value: string; label: string };
-
-export type ServiceOptions = ServiceOption[];
 
 // Every service, plus the builders and commercial pathway (docs/06-user-journeys.md J3)
 const serviceOptions: ServiceOptions = [
@@ -18,8 +15,6 @@ const serviceOptions: ServiceOptions = [
   })),
   { value: "builders-commercial", label: "Builder / commercial project" },
 ];
-
-export type PropertyTypes = string[];
 
 const propertyTypes: PropertyTypes = [
   "Home",

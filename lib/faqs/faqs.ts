@@ -1,13 +1,7 @@
 // Frequently asked questions shown on service pages (docs/05-website-sitemap.md)
 // Content is still to be confirmed by the product owner.
 
-export type Faq = {
-  question: string;
-  answer?: string; // Missing until the client supplies it
-  toConfirm?: boolean; // Shows a "To confirm" tag with the answer
-};
-
-export type Faqs = Faq[];
+import type { Faq } from "@/types/faqs";
 
 export const faqs = {
   match: {
@@ -69,7 +63,3 @@ export const faqs = {
       "Yes. Architect's plans, sketches or a photo of a design you like all help. Mention them in your enquiry and we'll arrange the best way to receive them.",
   },
 } satisfies Record<string, Faq>;
-
-export type FaqId = keyof typeof faqs;
-
-export type FaqIds = FaqId[];

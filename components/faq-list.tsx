@@ -1,7 +1,7 @@
 // Native <details>, accessible without JavaScript (docs/07-ui-ux-design-system.md)
-import { Faqs } from "@/lib/faqs/faqs";
 import { Plus } from "lucide-react";
 import ToConfirm from "@/components/to-confirm";
+import type { Faqs } from "@/types/faqs";
 
 export default function FaqList({ items }: { items: Faqs }) {
   return (

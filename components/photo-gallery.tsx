@@ -2,17 +2,15 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Lightbox, { type SlideImage } from "yet-another-react-lightbox";
+import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import type { Photos } from "@/lib/photos/photos";
+import type { GallerySlides, Photos } from "@/types/photos";
 
 export type PhotoGalleryProps = {
   photos: Photos;
   sizes: string; // Thumbnail sizes for the grid columns
   className: string; // Grid layout classes
 };
-
-export type GallerySlides = SlideImage[];
 
 // Square thumbnails that open a lightbox: ←/→/Esc, swipe, focus return
 // (docs/07-ui-ux-design-system.md). Keyboard, swipe and focus handling come from the package.

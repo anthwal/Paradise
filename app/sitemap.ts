@@ -2,8 +2,7 @@ import type { MetadataRoute } from "next";
 import { projects } from "@/lib/projects/projects";
 import { services } from "@/lib/services/services";
 import { siteUrl } from "@/lib/site";
-
-export type SitePaths = string[];
+import type { SitePaths } from "@/types/site";
 
 // Indexable pages without a dynamic segment; /thank-you is noindex and left out
 const staticPaths: SitePaths = [

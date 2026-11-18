@@ -1,9 +1,4 @@
-import {
-  getService,
-  ServiceItems,
-  services,
-  Services,
-} from "@/lib/services/services";
+import { getService, services } from "@/lib/services/services";
 import ServiceTile from "@/components/service-tile";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -17,9 +12,9 @@ import CtaSection from "@/components/cta-section";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import Eyebrow from "@/components/eyebrow";
 import FaqList from "@/components/faq-list";
-import { faqs, Faqs } from "@/lib/faqs/faqs";
+import { faqs } from "@/lib/faqs/faqs";
 import PhotoGallery from "@/components/photo-gallery";
-import { photos, Photos } from "@/lib/photos/photos";
+import { photos } from "@/lib/photos/photos";
 import { categoryFilters } from "@/lib/projects/projects";
 import Link from "next/link";
 import JsonLd from "@/components/json-ld";
@@ -28,10 +23,10 @@ import {
   faqJsonLd,
   serviceJsonLd,
 } from "@/lib/structured-data/structured-data";
-
-export type PageSection = { id: string; label: string };
-
-export type PageSections = PageSection[];
+import type { Faqs } from "@/types/faqs";
+import type { Photos } from "@/types/photos";
+import type { ServiceItems, Services } from "@/types/services";
+import type { PageSections } from "@/types/content";
 
 // "On this page" links, in the same order as the content blocks below
 const pageSections: PageSections = [

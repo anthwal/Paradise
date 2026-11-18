@@ -11,11 +11,12 @@ import PhotoGallery from "@/components/photo-gallery";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
 import ToConfirm from "@/components/to-confirm";
-import { photos, Photos } from "@/lib/photos/photos";
+import { photos } from "@/lib/photos/photos";
 import { getProject, projects } from "@/lib/projects/projects";
 import { services } from "@/lib/services/services";
 import JsonLd from "@/components/json-ld";
 import { breadcrumbJsonLd } from "@/lib/structured-data/structured-data";
+import type { Photos } from "@/types/photos";
 
 // All project pages are prerendered at build time
 export function generateStaticParams() {

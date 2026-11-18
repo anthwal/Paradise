@@ -9,15 +9,19 @@ import PhotoGallery from "@/components/photo-gallery";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
 import ServiceTile from "@/components/service-tile";
-import { faqs, Faqs } from "@/lib/faqs/faqs";
-import { photos, Photos } from "@/lib/photos/photos";
-import { PhotoSources } from "@/lib/projects/projects";
-import { services, Services } from "@/lib/services/services";
+import { faqs } from "@/lib/faqs/faqs";
+import { photos } from "@/lib/photos/photos";
+import { services } from "@/lib/services/services";
 import JsonLd from "@/components/json-ld";
 import {
   breadcrumbJsonLd,
   faqJsonLd,
 } from "@/lib/structured-data/structured-data";
+import type { Faqs } from "@/types/faqs";
+import type { Photos } from "@/types/photos";
+import type { PhotoSources } from "@/types/projects";
+import type { Services } from "@/types/services";
+import type { Audiences, QuoteNeeds } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "Commercial Screens Gold Coast",
@@ -37,10 +41,6 @@ export const metadata: Metadata = {
 
 // Builder and commercial audiences (docs/03-marketing-strategy.md)
 // Content is still to be confirmed by the product owner.
-export type Audience = { title: string; text: string };
-
-export type Audiences = Audience[];
-
 const audiences: Audiences = [
   {
     title: "Builders & developers",
@@ -53,10 +53,6 @@ const audiences: Audiences = [
 ];
 
 // What helps us quote larger projects (from the service considerations and FAQs)
-export type QuoteNeed = { title: string; text: string };
-
-export type QuoteNeeds = QuoteNeed[];
-
 const quoteNeeds: QuoteNeeds = [
   {
     title: "Plans or drawings",

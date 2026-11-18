@@ -1,19 +1,7 @@
 // todo: Site name and navigation (docs/05-website-sitemap.md)
 // Content is still to be confirmed by the product owner.
 
-export type NavItem = { label: string; href: string };
-
-export type NavItems = NavItem[];
-
-export interface BusinessDetails {
-  legalName: string;
-  region: string;
-  phone: string | null;
-  email: string | null;
-  abn: string | null;
-  qbccLicence: string | null;
-  facebook: string;
-}
+import type { BusinessDetails, NavItems, ShareImages } from "@/types/site";
 
 export const mainNav: NavItems = [
   { label: "Services", href: "/services" },
@@ -54,11 +42,6 @@ export const companyNav: NavItems = [
 export function telHref(phone: string) {
   return `tel:${phone.replace(/\s/g, "")}`;
 }
-
-// Image shown when a page is shared on social media or in messaging apps
-export type ShareImage = { url: string; alt: string };
-
-export type ShareImages = ShareImage[];
 
 // Used by pages without a photo of their own (the home page hero)
 export const defaultShareImages: ShareImages = [

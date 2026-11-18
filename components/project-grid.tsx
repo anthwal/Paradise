@@ -1,7 +1,8 @@
 import Link from "next/link";
 import PhotoGallery from "@/components/photo-gallery";
-import { photos, Photos } from "@/lib/photos/photos";
+import { photos } from "@/lib/photos/photos";
 import { categoryFilters } from "@/lib/projects/projects";
+import type { Photos } from "@/types/photos";
 
 export type ProjectGridProps = {
   activeSlug?: string; // The ?category= value; no value or an unknown one shows all

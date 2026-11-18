@@ -1,9 +1,4 @@
-export type Step = {
-  title: string;
-  text: string;
-};
-
-export type Steps = Step[];
+import type { Steps } from "@/types/content";
 
 const steps: Steps = [
   {

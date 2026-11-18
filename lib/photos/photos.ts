@@ -1,15 +1,7 @@
-import { ProjectCategories } from "@/lib/projects/projects";
+import type { Photos } from "@/types/photos";
 
 // Project photos, used by service galleries and the projects page
 // (docs/prototype/image-inventory.md). Full-resolution originals will replace these files.
-export type Photo = {
-  src: string;
-  alt: string;
-  categories: ProjectCategories;
-};
-
-export type Photos = Photo[];
-
 export const photos: Photos = [
   // Gates
   {

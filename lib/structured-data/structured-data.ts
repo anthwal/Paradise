@@ -9,8 +9,9 @@ import type {
   Service as ServiceSchema,
   WithContext,
 } from "schema-dts";
-import type { Faqs } from "@/lib/faqs/faqs";
-import type { Service } from "@/lib/services/services";
+import type { Faqs } from "@/types/faqs";
+import type { Service } from "@/types/services";
+import type { Breadcrumbs } from "@/types/structured-data";
 import { business, siteDescription, siteName, siteUrl } from "@/lib/site";
 
 // One identifier for the business, so every page's data points to the same entity
@@ -60,11 +61,6 @@ export function faqJsonLd(faqs: Faqs): WithContext<FAQPage> {
       })),
   };
 }
-
-// A breadcrumb step: the page name and its path
-export type Breadcrumb = { name: string; path: string };
-
-export type Breadcrumbs = Breadcrumb[];
 
 // Home is always the first step
 export function breadcrumbJsonLd(
