@@ -5,6 +5,7 @@ import { mainNav } from "@/lib/site";
 import MobileMenu from "@/components/mobile-menu";
 import Wordmark from "@/components/wordmark";
 import StickyHeader from "@/components/sticky-header";
+import ServicesMenu from "@/components/services-menu";
 
 export default function Header() {
   return (
@@ -17,12 +18,16 @@ export default function Header() {
             <ul className="flex items-center gap-8">
               {mainNav.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="font-medium underline-offset-4 hover:underline"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.href === "/services" ? (
+                    <ServicesMenu />
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="font-medium underline-offset-4 hover:underline"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
