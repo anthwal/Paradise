@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/components/button";
 import Hero from "@/components/hero";
 import Container from "@/components/container";
-import { business, services } from "@/lib/site";
+import { business } from "@/lib/site";
 import ServiceTile from "@/components/service-tile";
 import {
   Building2,
@@ -19,6 +19,7 @@ import ToConfirm from "@/components/to-confirm";
 import ProcessSteps from "@/components/process-steps";
 import CtaSection from "@/components/cta-section";
 import Reveal from "@/components/reveal";
+import { services } from "@/lib/services/services";
 
 export type Highlight = { label: string; Icon: LucideIcon };
 
@@ -110,7 +111,7 @@ export default function Home() {
             <ul className="mt-12 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-12">
               {services.map((service, index) => (
                 <li
-                  key={service.href}
+                  key={service.slug}
                   // Editorial rhythm on desktop: 7/5, 5/7, 7/5
                   className={
                     index % 4 === 0 || index % 4 === 3
@@ -119,7 +120,7 @@ export default function Home() {
                   }
                 >
                   <ServiceTile
-                    href={service.href}
+                    href={`/services/${service.slug}`}
                     title={service.label}
                     image={service.image}
                     imageAlt={service.imageAlt}

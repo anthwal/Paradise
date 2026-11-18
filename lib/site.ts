@@ -5,13 +5,6 @@ export type NavItem = { label: string; href: string };
 
 export type NavItems = NavItem[];
 
-export type Service = NavItem & {
-  image: string;
-  imageAlt: string;
-};
-
-export type Services = Service[];
-
 export interface BusinessDetails {
   legalName: string;
   region: string;
@@ -21,45 +14,6 @@ export interface BusinessDetails {
   qbccLicence: string | null;
   facebook: string;
 }
-
-export const services: Services = [
-  {
-    label: "Custom Gates",
-    href: "/services/gates",
-    image: "/images/gates/slatted-01.jpg",
-    imageAlt: "Horizontal slat sliding gate with matching fence panels",
-  },
-  {
-    label: "Slat Fencing & Infill Panels",
-    href: "/services/slat-fencing",
-    image: "/images/fencing/custom-01.jpg",
-    imageAlt: "Black horizontal slat panels between white rendered piers",
-  },
-  {
-    label: "Privacy Screens & Awnings",
-    href: "/services/privacy-screens-awnings",
-    image: "/images/awnings/screens-02.jpg",
-    imageAlt: "White horizontal slat screen wrapping a commercial building",
-  },
-  {
-    label: "Pool Fencing",
-    href: "/services/pool-fencing",
-    image: "/images/pool-fencing/pool-01.jpg",
-    imageAlt: "Frameless glass pool fencing on the waterfront",
-  },
-  {
-    label: "Balustrades",
-    href: "/services/balustrades",
-    image: "/images/balustrades/balustrade-05.jpg",
-    imageAlt: "White picket balustrade on a timber deck",
-  },
-  {
-    label: "Custom Fabrication & Enclosures",
-    href: "/services/custom-fabrication",
-    image: "/images/gates/custom-03.jpg",
-    imageAlt: "Sliding gate and front fence on a contemporary home",
-  },
-];
 
 export const mainNav: NavItems = [
   { label: "Services", href: "/services" },

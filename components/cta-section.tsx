@@ -9,10 +9,17 @@ import Reveal from "@/components/reveal";
 export type CtaSectionProps = {
   title: string;
   children: ReactNode;
+  quoteHref?: string;
+  eyebrow?: string;
 };
 
 // Dark ink band with headline, 2 buttons and phone (docs/07-ui-ux-design-system.md)
-export default function CtaSection({ title, children }: CtaSectionProps) {
+export default function CtaSection({
+  title,
+  children,
+  quoteHref = "/contact",
+  eyebrow = "Start your project",
+}: CtaSectionProps) {
   return (
     <section
       aria-labelledby="cta-heading"
@@ -22,14 +29,14 @@ export default function CtaSection({ title, children }: CtaSectionProps) {
         <Container>
           <SectionHeading
             id="cta-heading"
-            eyebrow="Start your project"
+            eyebrow={eyebrow}
             title={title}
             onDark
           >
             {children}
           </SectionHeading>
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/contact">Request a Quote</ButtonLink>
+            <ButtonLink href={quoteHref}>Request a Quote</ButtonLink>
             <ButtonLink href="/projects" variant="ghost-light">
               View Our Projects
             </ButtonLink>

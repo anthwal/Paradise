@@ -1,15 +1,10 @@
 import Container from "@/components/container";
 import Wordmark from "@/components/wordmark";
 import { ButtonLink } from "@/components/button";
-import {
-  business,
-  companyNav,
-  services,
-  siteDescription,
-  telHref,
-} from "@/lib/site";
+import { business, companyNav, siteDescription, telHref } from "@/lib/site";
 import Link from "next/link";
 import ToConfirm from "@/components/to-confirm";
+import { services } from "@/lib/services/services";
 
 async function CopyrightYear() {
   "use cache";
@@ -36,10 +31,13 @@ export default function Footer() {
           <nav aria-label="Services">
             <h2 className={headingClass}>Services</h2>
             <ul className="grid gap-3">
-              {services.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className={linkClass}>
-                    {item.label}
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className={linkClass}
+                  >
+                    {service.label}
                   </Link>
                 </li>
               ))}

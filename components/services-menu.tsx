@@ -5,9 +5,9 @@
 import { useRef } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Container from "@/components/container";
-import { services } from "@/lib/site";
 import Link from "next/link";
 import Image from "next/image";
+import { services } from "@/lib/services/services";
 
 export default function ServicesMenu() {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -38,9 +38,9 @@ export default function ServicesMenu() {
         <Container>
           <ul className="grid grid-cols-6 gap-6 py-8">
             {services.map((service) => (
-              <li key={service.href}>
+              <li key={service.slug}>
                 <Link
-                  href={service.href}
+                  href={`/services/${service.slug}`}
                   onClick={close}
                   className="group block"
                 >
