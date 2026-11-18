@@ -1,26 +1,66 @@
 import { ButtonLink } from "@/components/button";
 import Hero from "@/components/hero";
+import Container from "@/components/container";
+import Eyebrow from "@/components/eyebrow";
+import { services } from "@/lib/site";
+import ServiceTile from "@/components/service-tile";
 
 export default function Home() {
   return (
-    <Hero
-      imageSrc="/images/gates/custom-05.jpg"
-      imageAlt="Black vertical blade sliding gate across a gravel driveway"
-      eyebrow="Gold Coast Fabrication & Fencing"
-      title="Gates, fencing & screens, made to measure."
-    >
-      <p className="mt-6 max-w-2xl text-body-l">
-        Custom gates, slat fencing, privacy screens, pool fencing and
-        balustrades, designed and made to suit the way your property looks and
-        lives.
-      </p>
-      <div className="mt-8 flex flex-wrap gap-3">
-        <ButtonLink href="/contact">Request a Quote</ButtonLink>
-        <ButtonLink href="/projects" variant="ghost-light">
-          View Our Projects
-        </ButtonLink>
-      </div>
-    </Hero>
+    <>
+      <Hero
+        imageSrc="/images/gates/custom-05.jpg"
+        imageAlt="Black vertical blade sliding gate across a gravel driveway"
+        eyebrow="Gold Coast Fabrication & Fencing"
+        title="Gates, fencing & screens, made to measure."
+      >
+        <p className="mt-6 max-w-2xl text-body-l">
+          Custom gates, slat fencing, privacy screens, pool fencing and
+          balustrades, designed and made to suit the way your property looks and
+          lives.
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ButtonLink href="/contact">Request a Quote</ButtonLink>
+          <ButtonLink href="/projects" variant="ghost-light">
+            View Our Projects
+          </ButtonLink>
+        </div>
+      </Hero>
+      <section aria-labelledby="services-heading" className="py-18 lg:py-32">
+        <Container>
+          <div className="text-steel">
+            <Eyebrow>Services</Eyebrow>
+          </div>{" "}
+          <h2 id="services-heading" className="mt-4 font-display text-h2">
+            What we make
+          </h2>
+          <p className="mt-4 max-w-2xl text-body-l text-steel">
+            Six areas of work, all built to measure. Choose a service to see
+            examples, options and what to think about before you start.
+          </p>
+          <ul className="mt-12 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-12">
+            {services.map((service, index) => (
+              <li
+                key={service.href}
+                // Editorial rhythm on desktop: 7/5, 5/7, 7/5
+                className={
+                  index % 4 === 0 || index % 4 === 3
+                    ? "lg:col-span-7"
+                    : "lg:col-span-5"
+                }
+              >
+                <ServiceTile
+                  href={service.href}
+                  title={service.label}
+                  image={service.image}
+                  imageAlt={service.imageAlt}
+                />
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+    </>
     // <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     //   <div className="mx-auto w-full max-w-site px-4 md:px-8 xl:px-12 py-18 lg:py-32 bg-mist">Container</div>
     //   <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">

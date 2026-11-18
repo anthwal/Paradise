@@ -108,3 +108,12 @@ body {
   );
   animation: slat-reveal 900ms ease-out;
 }
+
+/* Thin slat lines over a photo, shown on tile hover (docs/04 "The Slat") */
+@utility slat-overlay {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--color-ink) 25%, transparent) 0 2px,
+    transparent 2px 12px
+  );
+}
