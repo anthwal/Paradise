@@ -11,10 +11,15 @@ import {
   MapPin,
   Ruler,
 } from "lucide-react";
+import { projects } from "@/lib/projects/projects";
+import SectionHeading from "@/components/section-heading";
+import ProjectCard from "@/components/project-card";
 
 export type Highlight = { label: string; Icon: LucideIcon };
 
 export type Highlights = Highlight[];
+
+const featuredProjects = projects.filter((project) => project.featured);
 
 const highlights: Highlights = [
   { label: "Residential & commercial", Icon: Building2 },
@@ -61,16 +66,14 @@ export default function Home() {
       </section>
       <section aria-labelledby="services-heading" className="py-18 lg:py-32">
         <Container>
-          <div className="text-steel">
-            <Eyebrow>Services</Eyebrow>
-          </div>{" "}
-          <h2 id="services-heading" className="mt-4 font-display text-h2">
-            What we make
-          </h2>
-          <p className="mt-4 max-w-2xl text-body-l text-steel">
+          <SectionHeading
+            id="services-heading"
+            eyebrow="Services"
+            title="What we make"
+          >
             Six areas of work, all built to measure. Choose a service to see
             examples, options and what to think about before you start.
-          </p>
+          </SectionHeading>
           <ul className="mt-12 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-12">
             {services.map((service, index) => (
               <li
@@ -87,6 +90,46 @@ export default function Home() {
                   title={service.label}
                   image={service.image}
                   imageAlt={service.imageAlt}
+                />
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+      <section
+        aria-labelledby="projects-heading"
+        className="border-t border-alloy py-18 lg:py-32"
+      >
+        <Container>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <SectionHeading
+              id="projects-heading"
+              eyebrow="Projects"
+              title="Featured projects"
+            >
+              A few examples from our completed work, from street frontages to
+              waterfront pools.
+            </SectionHeading>
+            <div className="shrink-0">
+              <ButtonLink href="/projects" variant="secondary">
+                See all projects
+              </ButtonLink>
+            </div>
+          </div>
+
+          {/* Horizontal scroll on mobile, 3-up on desktop (docs/05-website-sitemap.md) */}
+          <ul className="-mx-4 mt-12 flex snap-x snap-mandatory scroll-px-4 gap-6 overflow-x-auto px-4 pt-1 pb-4 md:-mx-8 md:scroll-px-8 md:px-8 lg:mx-0 lg:grid lg:grid-cols-3 lg:overflow-visible lg:p-0">
+            {featuredProjects.map((project) => (
+              <li
+                key={project.slug}
+                className="w-4/5 shrink-0 snap-start md:w-2/5 lg:w-auto"
+              >
+                <ProjectCard
+                  href={`/projects/${project.slug}`}
+                  title={project.title}
+                  category={project.category}
+                  image={project.image}
+                  imageAlt={project.imageAlt}
                 />
               </li>
             ))}
