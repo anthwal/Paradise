@@ -293,6 +293,38 @@ export default function Home() {
           </ul>
         </Container>
       </section>
+      <section
+        aria-labelledby="area-heading"
+        className="border-t border-alloy py-18 lg:py-32"
+      >
+        <Container>
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-6">
+            <div className="lg:col-span-6">
+              <SectionHeading
+                id="area-heading"
+                eyebrow="Where we work"
+                title="Based on the Gold Coast."
+              >
+                We work with homeowners, builders and property owners on the
+                Gold Coast.
+              </SectionHeading>
+            </div>
+
+            {/* Placeholder: service area not yet confirmed by the client */}
+            <div className="flex flex-col items-start gap-4 border border-dashed border-alloy p-6 text-steel lg:col-span-5 lg:col-start-8">
+              <ToConfirm />
+              <h3 className="font-display text-h3 text-ink">
+                Suburbs and regions serviced
+              </h3>
+              <p>
+                List the suburbs or regions covered (for example northern Gold
+                Coast, southern Gold Coast, hinterland, or nearby regions) and
+                any travel conditions.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
     </>
     // <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
     //   <div className="mx-auto w-full max-w-site px-4 md:px-8 xl:px-12 py-18 lg:py-32 bg-mist">Container</div>
