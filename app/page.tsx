@@ -1,13 +1,14 @@
 import { ButtonLink } from "@/components/button";
 import Hero from "@/components/hero";
 import Container from "@/components/container";
-import { services } from "@/lib/site";
+import { business, services } from "@/lib/site";
 import ServiceTile from "@/components/service-tile";
 import {
   Building2,
   Layers,
   type LucideIcon,
   MapPin,
+  Quote,
   Ruler,
 } from "lucide-react";
 import { projects } from "@/lib/projects/projects";
@@ -255,6 +256,41 @@ export default function Home() {
               />
             </div>
           </div>
+        </Container>
+      </section>
+      <section aria-labelledby="reviews-heading" className="py-18 lg:py-32">
+        <Container>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <SectionHeading
+              id="reviews-heading"
+              eyebrow="Customer reviews"
+              title="What our customers say"
+            >
+              Read reviews and see more of our work on our Facebook page.
+            </SectionHeading>
+            <div className="shrink-0">
+              <ButtonLink href={business.facebook} variant="secondary">
+                Reviews on Facebook
+              </ButtonLink>
+            </div>
+          </div>
+
+          {/* Placeholder slots: real reviews only, published with the customer's permission */}
+          <ul className="mt-12 grid gap-6 md:grid-cols-3">
+            {[1, 2, 3].map((slot) => (
+              <li
+                key={slot}
+                className="flex flex-col items-start gap-4 border border-dashed border-alloy p-6 text-steel"
+              >
+                <Quote aria-hidden="true" className="size-6 shrink-0" />
+                <p>
+                  A verified customer review will appear here, published with
+                  the customer&apos;s permission.
+                </p>
+                <ToConfirm />
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
     </>
