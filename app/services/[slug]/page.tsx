@@ -11,6 +11,8 @@ import { ArrowDown } from "lucide-react";
 import Eyebrow from "@/components/eyebrow";
 import FaqList from "@/components/faq-list";
 import { faqs } from "@/lib/faqs/faqs";
+import Image from "next/image";
+import { photos } from "@/lib/photos/photos";
 
 // "On this page" links; each block below adds its entry as it is built
 const pageSections = [
@@ -18,6 +20,7 @@ const pageSections = [
   { id: "options", label: "Options" },
   { id: "considerations", label: "Design considerations" },
   { id: "questions", label: "Questions" },
+  { id: "examples", label: "Examples" },
 ];
 
 // Each content block: anchor target clear of the sticky header, hairline between blocks
@@ -68,6 +71,9 @@ export default async function ServicePage({
   }
 
   const quoteHref = `/contact?service=${service.slug}`;
+  const examples = photos.filter((photo) =>
+    photo.categories.includes(service.category),
+  );
 
   return (
     <>
@@ -168,6 +174,35 @@ export default async function ServicePage({
                     title="What we offer"
                   />
                   <ItemGrid items={service.options} />
+                </Reveal>
+              </section>
+              <section
+                id="examples"
+                aria-labelledby="examples-heading"
+                className={blockClass}
+              >
+                <Reveal>
+                  <SectionHeading
+                    id="examples-heading"
+                    eyebrow="Examples"
+                    title="From our completed work"
+                  />
+                  <ul className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
+                    {examples.map((photo) => (
+                      <li
+                        key={photo.src}
+                        className="relative aspect-square overflow-hidden bg-mist"
+                      >
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          fill
+                          sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
+                          className="object-cover"
+                        />
+                      </li>
+                    ))}
+                  </ul>
                 </Reveal>
               </section>
 

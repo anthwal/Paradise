@@ -1,4 +1,5 @@
 import { FaqId } from "@/lib/faqs/faqs";
+import { ProjectCategory } from "@/lib/projects/projects";
 
 export type ServiceItem = { title: string; text: string };
 
@@ -14,6 +15,7 @@ export type Service = {
   applications: string[];
   considerations: ServiceItem[];
   faqs: FaqId[];
+  category: ProjectCategory;
 };
 
 export type Services = Service[];
@@ -21,6 +23,7 @@ export type Services = Service[];
 export const services: Services = [
   {
     slug: "gates",
+    category: "Gates",
     label: "Custom Gates",
     summary: "Sliding, swing and pedestrian gates in slat and blade designs.",
     headline: "Gates that set the tone for the whole property.",
@@ -74,6 +77,7 @@ export const services: Services = [
   },
   {
     slug: "slat-fencing",
+    category: "Pool",
     label: "Slat Fencing & Infill Panels",
     summary:
       "Horizontal slat and vertical blade fencing, plus infill panels between piers.",
@@ -129,6 +133,7 @@ export const services: Services = [
   },
   {
     slug: "privacy-screens-awnings",
+    category: "Screens",
     label: "Privacy Screens & Awnings",
     summary:
       "Slat, blade and louvred screens for homes, balconies and building façades.",
@@ -184,6 +189,7 @@ export const services: Services = [
   },
   {
     slug: "pool-fencing",
+    category: "Pool",
     label: "Pool Fencing",
     summary:
       "Frameless glass and black framed pool fencing, with gates to match.",
@@ -239,6 +245,7 @@ export const services: Services = [
   },
   {
     slug: "balustrades",
+    category: "Balustrades",
     label: "Balustrades",
     summary:
       "Aluminium and glass balustrades for decks, balconies, verandahs and stairs.",
@@ -288,6 +295,7 @@ export const services: Services = [
   },
   {
     slug: "custom-fabrication",
+    category: "Custom",
     label: "Custom Fabrication & Enclosures",
     summary: "Complete frontage packages, enclosures and one-off metalwork.",
     headline: "When standard won't do, we make it to suit.",
