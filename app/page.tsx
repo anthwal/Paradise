@@ -14,6 +14,8 @@ import { projects } from "@/lib/projects/projects";
 import SectionHeading from "@/components/section-heading";
 import ProjectCard from "@/components/project-card";
 import Image from "next/image";
+import ToConfirm from "@/components/to-confirm";
+import ProcessSteps from "@/components/process-steps";
 
 export type Highlight = { label: string; Icon: LucideIcon };
 
@@ -36,7 +38,7 @@ const highlights: Highlights = [
 ];
 
 // Why Paradise: 4 pillars (docs/05-website-sitemap.md)
-const reasons = [
+const reasons: Reasons = [
   {
     title: "Made to measure, not off the shelf",
     text: "Openings, slopes and pier spacing are rarely standard. Each job is made to suit its site, so panels sit square and gaps stay even from end to end.",
@@ -195,6 +197,27 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+          </div>
+        </Container>
+      </section>
+      <section
+        aria-labelledby="process-heading"
+        className="border-t border-alloy py-18 lg:py-32"
+      >
+        <Container>
+          <SectionHeading
+            id="process-heading"
+            eyebrow="How it works"
+            title="From first call to final fit."
+          >
+            A straightforward process, so you know what happens next at every
+            stage.
+          </SectionHeading>
+          <div className="mt-6 text-steel">
+            <ToConfirm />
+          </div>
+          <div className="mt-12">
+            <ProcessSteps />
           </div>
         </Container>
       </section>
