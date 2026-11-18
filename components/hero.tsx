@@ -1,5 +1,6 @@
 import Container from "@/components/container";
 import Eyebrow from "@/components/eyebrow";
+import HeroMarker from "@/components/hero-marker";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
@@ -20,10 +21,8 @@ export default function Hero({
   children,
 }: HeroProps) {
   return (
-    <section
-      data-hero
-      className="relative isolate -mt-[calc(--spacing(18)+1px)] flex min-h-[85svh] items-end bg-ink text-paper"
-    >
+    <section className="relative isolate -mt-[calc(--spacing(18)+1px)] flex min-h-[85svh] items-end bg-ink text-paper">
+      <HeroMarker />
       <Image
         src={imageSrc}
         alt={imageAlt}
