@@ -1,3 +1,5 @@
+import { FaqId } from "@/lib/faqs/faqs";
+
 export type ServiceItem = { title: string; text: string };
 
 export type Service = {
@@ -11,6 +13,7 @@ export type Service = {
   options: ServiceItem[];
   applications: string[];
   considerations: ServiceItem[];
+  faqs: FaqId[];
 };
 
 export type Services = Service[];
@@ -67,6 +70,7 @@ export const services: Services = [
         text: "Tell us how the gate will be used, how often and by whom, so the design and hardware suit.",
       },
     ],
+    faqs: ["match", "orientation", "automation", "colours"],
   },
   {
     slug: "slat-fencing",
@@ -121,6 +125,7 @@ export const services: Services = [
         text: "Dark slats against white render create strong contrast. Lighter tones blend in.",
       },
     ],
+    faqs: ["match", "orientation", "colours", "quote"],
   },
   {
     slug: "privacy-screens-awnings",
@@ -175,6 +180,7 @@ export const services: Services = [
         text: "Screens can blend into the façade or become a feature colour.",
       },
     ],
+    faqs: ["commercial", "screensUse", "colours", "quote"],
   },
   {
     slug: "pool-fencing",
@@ -229,6 +235,7 @@ export const services: Services = [
         text: "Think about where people come and go, and where the gate should sit.",
       },
     ],
+    faqs: ["glassOrFramed", "poolSafety", "colours", "quote"],
   },
   {
     slug: "balustrades",
@@ -277,6 +284,7 @@ export const services: Services = [
         text: "Matching window frames and trims keeps the balustrade looking part of the house.",
       },
     ],
+    faqs: ["glassBalustrade", "colours", "licence", "quote"],
   },
   {
     slug: "custom-fabrication",
@@ -329,6 +337,7 @@ export const services: Services = [
         text: "Choose one colour and slat style and carry it right through.",
       },
     ],
+    faqs: ["match", "commercial", "drawings", "quote"],
   },
 ];
 

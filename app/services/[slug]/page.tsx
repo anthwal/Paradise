@@ -9,11 +9,15 @@ import SectionHeading from "@/components/section-heading";
 import CtaSection from "@/components/cta-section";
 import { ArrowDown } from "lucide-react";
 import Eyebrow from "@/components/eyebrow";
+import FaqList from "@/components/faq-list";
+import { faqs } from "@/lib/faqs/faqs";
+
 // "On this page" links; each block below adds its entry as it is built
 const pageSections = [
   { id: "overview", label: "Overview" },
   { id: "options", label: "Options" },
   { id: "considerations", label: "Design considerations" },
+  { id: "questions", label: "Questions" },
 ];
 
 // Each content block: anchor target clear of the sticky header, hairline between blocks
@@ -179,6 +183,22 @@ export default async function ServicePage({
                     title="Design considerations"
                   />
                   <ItemGrid items={service.considerations} />
+                </Reveal>
+              </section>
+              <section
+                id="questions"
+                aria-labelledby="questions-heading"
+                className={blockClass}
+              >
+                <Reveal>
+                  <SectionHeading
+                    id="questions-heading"
+                    eyebrow="Questions"
+                    title="Common questions"
+                  />
+                  <div className="mt-8">
+                    <FaqList items={service.faqs.map((id) => faqs[id])} />
+                  </div>
                 </Reveal>
               </section>
             </div>
